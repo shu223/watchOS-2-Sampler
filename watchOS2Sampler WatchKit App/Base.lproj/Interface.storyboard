@@ -1,21 +1,237 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6724" systemVersion="14A389" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc" defaultGlanceController="0uZ-2p-rRc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8066.14"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Symbol.ttf">
+            <string>Symbol</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watchOS2Sampler_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="oCl-Va-JvO">
+                            <items>
+                                <tableRow identifier="Cell" id="6Ha-8W-5E5" customClass="RowController" customModule="watchOS2Sampler_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="eOg-aV-NZk">
+                                        <items>
+                                            <label alignment="left" text="Label" minimumScaleFactor="0.80000000000000004" id="sk7-7j-PZd">
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                            <label alignment="left" text="Label" numberOfLines="0" id="4ce-P9-sWP">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="detailLabel" destination="4ce-P9-sWP" id="j6z-8a-LGk"/>
+                                        <outlet property="textLabel" destination="sk7-7j-PZd" id="e9l-Hj-1c5"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="oCl-Va-JvO" id="nAA-s1-d4k"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="235" y="347"/>
+        </scene>
+        <!--AudioRecAndPlay-->
+        <scene sceneID="EoF-gT-kLL">
+            <objects>
+                <controller identifier="AudioRecAndPlay" hidesWhenLoading="NO" id="H0L-Y4-Qgh" userLabel="AudioRecAndPlay" customClass="AudioRecAndPlayInterfaceController" customModule="watchOS2Sampler_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="REC" id="dOz-9f-0pM">
+                            <connections>
+                                <action selector="recBtnTapped" destination="H0L-Y4-Qgh" id="BRf-Xf-sSR"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" text="Label" numberOfLines="0" id="0aX-Gd-u0H">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <button width="1" alignment="left" title="PLAY" id="yDe-7e-cR3">
+                            <connections>
+                                <action selector="playBtnTapped" destination="H0L-Y4-Qgh" id="9Ss-g3-AHa"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" text="Label" numberOfLines="0" id="ctv-nn-TWL">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="playLabel" destination="ctv-nn-TWL" id="Csw-M3-xhN"/>
+                        <outlet property="recLabel" destination="0aX-Gd-u0H" id="9vQ-aQ-42r"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="467" y="347"/>
+        </scene>
+        <!--Alert-->
+        <scene sceneID="5lw-W3-L5p">
+            <objects>
+                <controller identifier="Alert" hidesWhenLoading="NO" id="ifX-al-tiL" customClass="AlertInterfaceController" customModule="watchOS2Sampler_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="Alert" id="GRZ-pg-fXm">
+                            <connections>
+                                <action selector="alertBtnTapped" destination="ifX-al-tiL" id="jSc-cC-GZK"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="SideBySideButtonsAlert" id="PXI-8F-Cmh">
+                            <fontDescription key="font" type="system" pointSize="13"/>
+                            <connections>
+                                <action selector="sidebysideBtnTapped" destination="ifX-al-tiL" id="jBr-Bl-Fm0"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="ActionSheet" id="A42-Ev-C7J">
+                            <connections>
+                                <action selector="actionSheetBtnTapped" destination="ifX-al-tiL" id="JlP-2a-lXU"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="631" y="347"/>
+        </scene>
+        <!--CoordinatedAnimations-->
+        <scene sceneID="mMP-s6-7Ks">
+            <objects>
+                <controller identifier="CoordinatedAnimations" hidesWhenLoading="NO" id="CQv-21-1hV" customClass="CoordinatedAnimationsInterfaceController" customModule="watchOS2Sampler_WatchKit_Extension">
+                    <items>
+                        <group width="120" height="120" alignment="center" verticalAlignment="center" backgroundImage="progress-0" contentMode="scaleAspectFit" id="227-ia-KDH">
+                            <items>
+                                <picker width="76" height="76" alignment="center" verticalAlignment="center" id="iuM-kR-tku"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="picker" destination="iuM-kR-tku" id="QYF-9V-oPG"/>
+                        <outlet property="progressGroup" destination="227-ia-KDH" id="vPV-2q-9Fp"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="792" y="347"/>
+        </scene>
+        <!--OpenSystemURL-->
+        <scene sceneID="6Hq-OX-2eq">
+            <objects>
+                <controller identifier="OpenSystemURL" hidesWhenLoading="NO" id="Xbl-zW-L61" customClass="OpenSystemURLInterfaceController" customModule="watchOS2Sampler_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Open" id="frs-TE-K46">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <group width="1" alignment="left" id="KrK-0z-Zfr">
+                            <items>
+                                <button width="0.5" alignment="left" title="Phone" id="YhQ-Sh-2za">
+                                    <connections>
+                                        <action selector="phoneBtnTapped" destination="Xbl-zW-L61" id="M4V-NX-zO6"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" alignment="left" title="SMS" id="8P1-pW-OG7">
+                                    <connections>
+                                        <action selector="smsBtnTapped" destination="Xbl-zW-L61" id="vmV-Zg-AAO"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="965" y="347"/>
+        </scene>
+        <!--HeartRate-->
+        <scene sceneID="Nya-6C-y1D">
+            <objects>
+                <controller identifier="HeartRate" hidesWhenLoading="NO" id="6JP-Ej-cqj" customClass="HeartRateInterfaceController" customModule="watchOS2Sampler_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="Azb-ii-dhJ">
+                            <items>
+                                <imageView alignment="left" image="heart" id="90g-zg-DcI"/>
+                                <label alignment="left" text="---" minimumScaleFactor="0.20000000000000001" id="7r8-Yu-c0E">
+                                    <fontDescription key="font" name="Symbol" family="Symbol" pointSize="28"/>
+                                </label>
+                                <label alignment="left" text="BPM" id="wgq-1s-r9f">
+                                    <color key="textColor" red="0.8980392814" green="0.15686275059999999" blue="0.14509804549999999" alpha="1" colorSpace="deviceRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="label" destination="7r8-Yu-c0E" id="yzI-BB-b51"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1137" y="347"/>
+        </scene>
+        <!--AnimatedProperties-->
+        <scene sceneID="ikR-Jp-pgH">
+            <objects>
+                <controller identifier="AnimatedProperties" hidesWhenLoading="NO" id="ucY-6E-Lu6" customClass="AnimatedPropertiesInterfaceController" customModule="watchOS2Sampler_WatchKit_Extension">
+                    <items>
+                        <imageView width="50" height="80" alignment="center" verticalAlignment="bottom" image="m4" contentMode="scaleAspectFit" id="pLF-jp-M8O"/>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="Gc4-wG-wgA">
+                            <items>
+                                <button width="0.34999999999999998" alignment="left" title="Scale" id="1bJ-q7-K1q">
+                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                    <connections>
+                                        <action selector="scaleBtnTapped" destination="ucY-6E-Lu6" id="WTQ-Nz-XHr"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" alignment="left" title="Fade" id="sRo-CA-lmC">
+                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                    <connections>
+                                        <action selector="fadeBtnTapped" destination="ucY-6E-Lu6" id="dgF-iI-tIc"/>
+                                    </connections>
+                                </button>
+                                <button width="0.34000000000000002" alignment="left" title="Move" id="OqW-Q6-rIr">
+                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                    <connections>
+                                        <action selector="moveBtnTapped" destination="ucY-6E-Lu6" id="A4J-la-6K8"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="image" destination="pLF-jp-M8O" id="vuN-tu-fs1"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1305" y="347"/>
+        </scene>
+        <!--AudioFilePlayer-->
+        <scene sceneID="x9N-dF-s8f">
+            <objects>
+                <controller identifier="AudioFilePlayer" hidesWhenLoading="NO" id="sAP-r3-aWG" customClass="AudioFilePlayerInterfaceController" customModule="watchOS2Sampler_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="PLAY" id="jBa-i0-ty8">
+                            <connections>
+                                <action selector="playBtnTapped" destination="sAP-r3-aWG" id="CuV-oh-bR2"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" text="Label" numberOfLines="0" id="Syk-Y6-pta">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="label" destination="Syk-Y6-pta" id="weq-y3-w1v"/>
+                        <outlet property="playBtn" destination="jBa-i0-ty8" id="heL-cP-hcj"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="466" y="576"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
             <objects>
-                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModuleProvider="target">
+                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="watchOS2Sampler_WatchKit_App" customModuleProvider="target">
                     <items>
                         <group alignment="left" id="t8f-Gd-c4y"/>
                         <group alignment="left" id="uCw-4Q-Ouw"/>
@@ -44,9 +260,232 @@
         <!--Notification Controller-->
         <scene sceneID="KIl-fV-djm">
             <objects>
-                <controller id="gdX-wl-uQE" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="watchOS2Sampler_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="553" y="1001"/>
+        </scene>
+        <!--Taptic-->
+        <scene sceneID="JKY-XJ-zfq">
+            <objects>
+                <controller identifier="Taptic" hidesWhenLoading="NO" id="gay-pf-gd0" customClass="TapticInterfaceController" customModule="watchOS2Sampler_WatchKit_Extension">
+                    <items>
+                        <picker width="1" height="100" alignment="left" id="dpE-QA-ILQ">
+                            <connections>
+                                <action selector="pickerItemSelected:" destination="gay-pf-gd0" id="OZb-27-8IC"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="PLAY" id="x2h-cz-D0i">
+                            <connections>
+                                <action selector="hapticBtnTapped" destination="gay-pf-gd0" id="fgZ-Aj-c4u"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="picker" destination="dpE-QA-ILQ" id="Fy4-RK-bZw"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="631" y="576"/>
+        </scene>
+        <!--PickerStyles-->
+        <scene sceneID="8az-8q-aQ7">
+            <objects>
+                <controller identifier="PickerStyles" hidesWhenLoading="NO" id="3tV-Oe-B6P" customClass="PickerStylesInterfaceController" customModule="watchOS2Sampler_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="List" id="9OY-7H-NFs">
+                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                        </label>
+                        <picker width="1" height="100" alignment="left" focusStyle="sequence" indicatorMode="shownWhileFocused" id="SbE-4Y-dsV"/>
+                        <label alignment="left" text="Stack" id="MiK-KV-XWO">
+                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                        </label>
+                        <picker width="1" height="100" alignment="left" style="stack" focusStyle="sequence" indicatorMode="shownWhileFocused" id="TcN-0Z-ydP"/>
+                        <label alignment="left" text="Sequence" id="nbF-Pb-Nd7">
+                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                        </label>
+                        <picker width="1" height="100" alignment="left" style="sequence" focusStyle="sequence" indicatorMode="shownWhileFocused" id="DqM-ZO-wwX"/>
+                    </items>
+                    <connections>
+                        <outlet property="listPicker" destination="SbE-4Y-dsV" id="bJD-dY-bfZ"/>
+                        <outlet property="sequencePicker" destination="DqM-ZO-wwX" id="41p-jQ-tMq"/>
+                        <outlet property="stackPicker" destination="TcN-0Z-ydP" id="WoC-Wj-3rc"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="792" y="686"/>
+        </scene>
+        <!--Accelerometer-->
+        <scene sceneID="94q-MV-q1G">
+            <objects>
+                <controller identifier="Accelerometer" hidesWhenLoading="NO" id="QsC-lc-G4q" customClass="AccelerometerInterfaceController" customModule="watchOS2Sampler_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="ONg-hO-vre">
+                            <items>
+                                <label alignment="left" text="x" id="Sn0-PE-aZy">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Label" textAlignment="right" id="oqD-We-guI"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="GT9-hN-hvo">
+                            <items>
+                                <label alignment="left" text="y" id="xMW-Xr-WMc">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Label" textAlignment="right" id="kkb-o0-HSV"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="tZ4-Fx-FBb">
+                            <items>
+                                <label alignment="left" text="z" id="xmS-PS-SbS">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Label" textAlignment="right" id="SnC-An-DYP"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="labelX" destination="oqD-We-guI" id="sRf-sj-8Cx"/>
+                        <outlet property="labelY" destination="kkb-o0-HSV" id="wMW-vV-x7J"/>
+                        <outlet property="labelZ" destination="SnC-An-DYP" id="u2R-Yq-MpQ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="965" y="576"/>
+        </scene>
+        <!--TableAnimation-->
+        <scene sceneID="nu6-B7-cBA">
+            <objects>
+                <controller identifier="TableAnimation" hidesWhenLoading="NO" id="gNI-nr-w26" customClass="TableAnimationInterfaceController" customModule="watchOS2Sampler_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="H9a-Fr-7Fa">
+                            <items>
+                                <tableRow identifier="Cell" id="LvT-Zs-jgM" customClass="RowController" customModule="watchOS2Sampler_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="rwo-en-bUj">
+                                        <items>
+                                            <label alignment="left" text="Label" id="O6G-hF-fcp">
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                            <label alignment="left" text="Label" id="aeb-Y3-8ea">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="detailLabel" destination="aeb-Y3-8ea" id="4lu-sN-A0Q"/>
+                                        <outlet property="textLabel" destination="O6G-hF-fcp" id="6GB-7U-1CO"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <group width="1" height="38" alignment="left" verticalAlignment="bottom" id="yYV-eu-BuD">
+                            <items>
+                                <button width="67" alignment="left" title="Insert" id="zeJ-qc-w8V">
+                                    <connections>
+                                        <action selector="insertBtnTapped" destination="gNI-nr-w26" id="6DJ-QV-aNU"/>
+                                    </connections>
+                                </button>
+                                <button width="67" alignment="left" title="Remove" id="szC-jg-Odg">
+                                    <connections>
+                                        <action selector="removeBtnTapped" destination="gNI-nr-w26" id="ScL-mH-Rqt"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="H9a-Fr-7Fa" id="cE9-mP-ceB"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1137" y="576"/>
+        </scene>
+        <!--Gyroscope-->
+        <scene sceneID="ScE-TA-9sU">
+            <objects>
+                <controller identifier="Gyroscope" hidesWhenLoading="NO" id="l2D-sI-W3o" customClass="GyroscopeInterfaceController" customModule="watchOS2Sampler_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="Oqb-gc-qFJ">
+                            <items>
+                                <label alignment="left" text="x" id="kDU-NB-M4s">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Label" textAlignment="right" id="461-3m-Ks3"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="bCr-rS-loY">
+                            <items>
+                                <label alignment="left" text="y" id="il2-bu-HqL">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Label" textAlignment="right" id="Sdd-8a-nch"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="nlv-Es-DaY">
+                            <items>
+                                <label alignment="left" text="z" id="7er-f0-NBa">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Label" textAlignment="right" id="rv0-ka-en6"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="labelX" destination="461-3m-Ks3" id="MOl-LA-qvV"/>
+                        <outlet property="labelY" destination="Sdd-8a-nch" id="9LT-Hc-5YW"/>
+                        <outlet property="labelZ" destination="rv0-ka-en6" id="FtD-3d-HDs"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="965" y="796"/>
+        </scene>
+        <!--Pedometer-->
+        <scene sceneID="IYs-qI-tg6">
+            <objects>
+                <controller identifier="Pedometer" hidesWhenLoading="NO" id="YOL-Mj-pC6" customClass="PedometerInterfaceController" customModule="watchOS2Sampler_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="17G-wX-kWn">
+                            <items>
+                                <label alignment="left" text="Steps" id="FYp-y2-3AS">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="0" textAlignment="right" id="lnt-iu-wmF"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="oAc-ax-wPV">
+                            <items>
+                                <label alignment="left" text="Distance" id="Yiz-Bq-48R">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="0" textAlignment="right" id="x5c-2O-nDf"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="UsT-7v-lIQ">
+                            <items>
+                                <label alignment="left" text="Ascended" id="6zr-p1-OVl">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="0" textAlignment="right" id="flJ-k6-XM4"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="zBs-X8-42N">
+                            <items>
+                                <label alignment="left" text="Descended" id="adH-Wr-SYg">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="0" textAlignment="right" id="tf4-je-d9c"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="labelAscended" destination="flJ-k6-XM4" id="1VK-ZL-R3s"/>
+                        <outlet property="labelDescended" destination="tf4-je-d9c" id="rGq-Cr-zxQ"/>
+                        <outlet property="labelDistance" destination="x5c-2O-nDf" id="InR-hP-CHr"/>
+                        <outlet property="labelSteps" destination="lnt-iu-wmF" id="W55-UU-4vP"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1137" y="796"/>
         </scene>
     </scenes>
 </document>

@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>watchOS2Sampler WatchKit App</string>
+	<string>watchOS 2 Sampler</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -28,7 +28,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>Shuichi-Tsutsumi.watchOS2Sampler</string>
+	<string>com.shu223.sampler.watchos2</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>
