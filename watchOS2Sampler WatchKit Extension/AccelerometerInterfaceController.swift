@@ -29,7 +29,7 @@ class AccelerometerInterfaceController: WKInterfaceController {
     override func willActivate() {
         super.willActivate()
 
-        if (motionManager.gyroAvailable == true) {
+        if (motionManager.accelerometerAvailable == true) {
             let handler:CMAccelerometerHandler = {(data: CMAccelerometerData?, error: NSError?) -> Void in
                 self.labelX.setText(String(format: "%.2f", data!.acceleration.x))
                 self.labelY.setText(String(format: "%.2f", data!.acceleration.y))

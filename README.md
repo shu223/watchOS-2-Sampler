@@ -46,6 +46,8 @@ Animate width/height and alignments.
 
 Record and play audio.
 
+<img src="ResourcesForREADME/recorder.jpg">
+
 ###Picker Styles
 
 WKInterfacePicker styles catalog.
@@ -70,3 +72,17 @@ Open Tel or SMS app using openSystemURL: method.
 
 Play an audio file with WKAudioFilePlayer.
 
+
+##Author
+
+Shuichi Tsutsumi
+
+- [Twitter](https://twitter.com/shu223)
+- [Facebook](https://www.facebook.com/shuichi.tsutsumi)
+- [LinkedIn](https://www.linkedin.com/profile/view?id=214896557)
+- [Blog (Japanese)](http://d.hatena.ne.jp/shu223/)
+
+
+##Special Thanks
+
+Icons are **designed by [Okazu](https://www.facebook.com/pashimo)**
