@@ -17,6 +17,7 @@
 		8A50D6011B2CDC4600F4C7A2 /* TableAnimationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A50D6001B2CDC4600F4C7A2 /* TableAnimationInterfaceController.swift */; };
 		8A50D6031B2CE4C500F4C7A2 /* AnimatedPropertiesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A50D6021B2CE4C500F4C7A2 /* AnimatedPropertiesInterfaceController.swift */; };
 		8A50D6091B2CEDC600F4C7A2 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A50D6081B2CEDC600F4C7A2 /* HealthKit.framework */; };
+		8A732D791B2FE32D00551CE3 /* MessageToPhoneInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A732D781B2FE32D00551CE3 /* MessageToPhoneInterfaceController.swift */; };
 		8A976E5F1B2C9AC8008851CD /* OpenSystemURLInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A976E5E1B2C9AC8008851CD /* OpenSystemURLInterfaceController.swift */; };
 		8AA60E2A1B28E20300BE313B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA60E291B28E20300BE313B /* AppDelegate.swift */; };
 		8AA60E2C1B28E20300BE313B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA60E2B1B28E20300BE313B /* ViewController.swift */; };
@@ -113,6 +114,7 @@
 		8A50D6041B2CED7100F4C7A2 /* watchOS2Sampler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = watchOS2Sampler.entitlements; sourceTree = "<group>"; };
 		8A50D6071B2CEDC600F4C7A2 /* watchOS2Sampler WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "watchOS2Sampler WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		8A50D6081B2CEDC600F4C7A2 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		8A732D781B2FE32D00551CE3 /* MessageToPhoneInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageToPhoneInterfaceController.swift; sourceTree = "<group>"; };
 		8A976E5E1B2C9AC8008851CD /* OpenSystemURLInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSystemURLInterfaceController.swift; sourceTree = "<group>"; };
 		8AA60E261B28E20300BE313B /* watchOS2Sampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watchOS2Sampler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA60E291B28E20300BE313B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				8A2DF2721B2B85DE0025DDD7 /* CoordinatedAnimationsInterfaceController.swift */,
 				8A2DF2741B2BA3430025DDD7 /* PickerStylesInterfaceController.swift */,
 				8A976E5E1B2C9AC8008851CD /* OpenSystemURLInterfaceController.swift */,
+				8A732D781B2FE32D00551CE3 /* MessageToPhoneInterfaceController.swift */,
 			);
 			name = SampleControllers;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				8AA60E6D1B28E20300BE313B /* ComplicationController.swift in Sources */,
 				8A976E5F1B2C9AC8008851CD /* OpenSystemURLInterfaceController.swift in Sources */,
 				8AFECCB41B2A3246005C46D1 /* AlertInterfaceController.swift in Sources */,
+				8A732D791B2FE32D00551CE3 /* MessageToPhoneInterfaceController.swift in Sources */,
 				8AA60E651B28E20300BE313B /* InterfaceController.swift in Sources */,
 				8AA60E6B1B28E20300BE313B /* GlanceController.swift in Sources */,
 				8A50D6011B2CDC4600F4C7A2 /* TableAnimationInterfaceController.swift in Sources */,

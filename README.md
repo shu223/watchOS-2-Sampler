@@ -64,6 +64,10 @@ Present an alert or action sheet.
 
 Coordinated Animations with WKInterfacePicker and Digital Crown.
 
+###Interactive Messaging
+
+Sending message to phone and receiving from phone demo with WatchConnectivity.
+
 ###Open System URL
 
 Open Tel or SMS app using openSystemURL: method.

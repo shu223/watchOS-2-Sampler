@@ -28,12 +28,12 @@ class InterfaceController: WKInterfaceController {
         items = [
             [
                 kItemKeyTitle: "Accelerometer",
-                kItemKeyDetail: "Access to Accelerometer data using CoreMotion",
+                kItemKeyDetail: "Access to Accelerometer data using CoreMotion.",
                 kItemKeyClassPrefix: "Accelerometer"
             ],
             [
                 kItemKeyTitle: "Gyroscope",
-                kItemKeyDetail: "Access to Gyroscope data using CoreMotion",
+                kItemKeyDetail: "Access to Gyroscope data using CoreMotion.",
                 kItemKeyClassPrefix: "Gyroscope",
             ],
             [
@@ -48,7 +48,7 @@ class InterfaceController: WKInterfaceController {
             ],
             [
                 kItemKeyTitle: "Table Animations",
-                kItemKeyDetail: "Insert and remove animations for WKInterfaceTable",
+                kItemKeyDetail: "Insert and remove animations for WKInterfaceTable.",
                 kItemKeyClassPrefix: "TableAnimation",
             ],
             [
@@ -63,7 +63,7 @@ class InterfaceController: WKInterfaceController {
             ],
             [
                 kItemKeyTitle: "Picker Styles",
-                kItemKeyDetail: "WKInterfacePicker styles catalog",
+                kItemKeyDetail: "WKInterfacePicker styles catalog.",
                 kItemKeyClassPrefix: "PickerStyles",
             ],
             [
@@ -82,13 +82,18 @@ class InterfaceController: WKInterfaceController {
                 kItemKeyClassPrefix: "CoordinatedAnimations",
             ],
             [
+                kItemKeyTitle: "Interactive Messaging",
+                kItemKeyDetail: "Sending message to phone and receiving from phone demo with WatchConnectivity.",
+                kItemKeyClassPrefix: "MessageToPhone",
+            ],
+            [
                 kItemKeyTitle: "Open System URL",
                 kItemKeyDetail: "Open Tel or SMS app using openSystemURL: method.",
                 kItemKeyClassPrefix: "OpenSystemURL",
             ],
             [
                 kItemKeyTitle: "Audio File Player",
-                kItemKeyDetail: "Play an audio file with WKAudioFilePlayer",
+                kItemKeyDetail: "Play an audio file with WKAudioFilePlayer.",
                 kItemKeyClassPrefix: "AudioFilePlayer",
             ],
         ]

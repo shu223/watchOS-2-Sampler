@@ -400,6 +400,24 @@
             </objects>
             <point key="canvasLocation" x="1137" y="576"/>
         </scene>
+        <!--MessageToPhone-->
+        <scene sceneID="CEr-Mu-hBN">
+            <objects>
+                <controller identifier="MessageToPhone" hidesWhenLoading="NO" id="nGP-X4-1R7" customClass="MessageToPhoneInterfaceController" customModule="watchOS2Sampler_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="Send" id="mfm-fg-hLw">
+                            <connections>
+                                <action selector="sendBtnTapped" destination="nGP-X4-1R7" id="BBJ-aB-qdI"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" text="Launch parent app and tap the &quot;send&quot; button when try to receive message from phone." numberOfLines="0" id="B2I-2N-c6N">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1305" y="576"/>
+        </scene>
         <!--Gyroscope-->
         <scene sceneID="ScE-TA-9sU">
             <objects>
