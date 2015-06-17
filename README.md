@@ -77,6 +77,17 @@ Open Tel or SMS app using openSystemURL: method.
 Play an audio file with WKAudioFilePlayer.
 
 
+##Known Issues
+
+- Audio Rec & Play
+  - Can't record on a real watch device. (Works on simulator)
+- Heart Rate
+  - Under development
+- Open System URL
+  - Phone doesn't launch...
+  - It's based on the Apple's document. 
+  - `sms:` works with same way. I have no idea why it doesn't work!
+
 ##Author
 
 Shuichi Tsutsumi
