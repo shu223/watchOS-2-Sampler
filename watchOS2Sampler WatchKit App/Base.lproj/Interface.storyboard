@@ -505,5 +505,28 @@
             </objects>
             <point key="canvasLocation" x="1137" y="796"/>
         </scene>
+        <!--NSURLSession-->
+        <scene sceneID="AoC-Dp-FSp">
+            <objects>
+                <controller identifier="NSURLSession" hidesWhenLoading="NO" id="eie-ie-fBn" customClass="NSURLSessionInterfaceController" customModule="watchOS2Sampler_WatchKit_Extension">
+                    <items>
+                        <group alignment="center" radius="12" id="a7Y-P1-b6n">
+                            <items>
+                                <imageView width="100" height="100" alignment="center" verticalAlignment="center" id="LxF-ak-4nn"/>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Get Image from Network" id="sGr-XQ-3Wr">
+                            <connections>
+                                <action selector="getImageBtnTapped" destination="eie-ie-fBn" id="ASf-S7-iFR"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="image" destination="LxF-ak-4nn" id="ykQ-rg-HaV"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1305" y="796.5"/>
+        </scene>
     </scenes>
 </document>
