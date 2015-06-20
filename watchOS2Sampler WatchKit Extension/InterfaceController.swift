@@ -10,9 +10,9 @@ import WatchKit
 import Foundation
 
 
-let kItemKeyTitle      : String = "title"
-let kItemKeyDetail     : String = "detail"
-let kItemKeyClassPrefix: String = "prefix"
+let kItemKeyTitle       = "title"
+let kItemKeyDetail      = "detail"
+let kItemKeyClassPrefix = "prefix"
 
 
 class InterfaceController: WKInterfaceController {
@@ -98,7 +98,7 @@ class InterfaceController: WKInterfaceController {
             ],
             [
                 kItemKeyTitle: "Network Access",
-                kItemKeyDetail: "Get image from network",
+                kItemKeyDetail: "Get an image data from network using NSURLSession.",
                 kItemKeyClassPrefix: "NSURLSession",
             ],
         ]
