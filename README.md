@@ -76,7 +76,7 @@ Open Tel or SMS app using openSystemURL: method.
 
 Play an audio file with WKAudioFilePlayer.
 
-###Network Access
+###Network Access (by [KAMEDAkyosuke](https://github.com/KAMEDAkyosuke))
 
 Get an image data from network using NSURLSession.
 
