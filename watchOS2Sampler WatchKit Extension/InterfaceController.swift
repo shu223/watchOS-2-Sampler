@@ -96,6 +96,11 @@ class InterfaceController: WKInterfaceController {
                 kItemKeyDetail: "Play an audio file with WKAudioFilePlayer.",
                 kItemKeyClassPrefix: "AudioFilePlayer",
             ],
+            [
+                kItemKeyTitle: "Network Access",
+                kItemKeyDetail: "Get image from network",
+                kItemKeyClassPrefix: "NSURLSession",
+            ],
         ]
     }
 
