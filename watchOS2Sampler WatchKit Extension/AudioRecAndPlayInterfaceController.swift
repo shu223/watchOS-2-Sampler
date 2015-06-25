@@ -38,7 +38,15 @@ class AudioRecAndPlayInterfaceController: WKInterfaceController {
     // MARK: - Private
 
     func recFileURL() -> NSURL {
-
+        
+        // Must use a shared container
+        let fileManager = NSFileManager.defaultManager()
+        let container = fileManager.containerURLForSecurityApplicationGroupIdentifier("group.xx.xx") // replace with your own identifier
+        let audioFileURL = container!.URLByAppendingPathComponent("rec.m4a")
+        
+        return audioFileURL
+        
+        /*
         let filePaths = NSSearchPathForDirectoriesInDomains(
             NSSearchPathDirectory.DocumentDirectory,
             NSSearchPathDomainMask.UserDomainMask,
@@ -48,6 +56,7 @@ class AudioRecAndPlayInterfaceController: WKInterfaceController {
         let fileUrl = NSURL.fileURLWithPath(filePath)
         
         return fileUrl
+        */
     }
     
     
