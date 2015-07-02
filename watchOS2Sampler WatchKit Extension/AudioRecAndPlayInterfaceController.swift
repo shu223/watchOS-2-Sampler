@@ -41,7 +41,7 @@ class AudioRecAndPlayInterfaceController: WKInterfaceController {
         
         // Must use a shared container
         let fileManager = NSFileManager.defaultManager()
-        let container = fileManager.containerURLForSecurityApplicationGroupIdentifier("group.xx.xx") // replace with your own identifier
+        let container = fileManager.containerURLForSecurityApplicationGroupIdentifier("<# group.xx.xx #>") // replace with your own identifier
         let audioFileURL = container!.URLByAppendingPathComponent("rec.m4a")
         
         return audioFileURL

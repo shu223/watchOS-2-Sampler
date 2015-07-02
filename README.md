@@ -12,7 +12,9 @@ Code examples for new features of watchOS 2.
 ##How to build
 
 - Change the "Team" setting on [General] for each target.
-- Setup HealthKit for the WatchKit extension target.
+- Setup **HealthKit** for the WatchKit extension target.
+- Setup **App Groups** for the parent app and extension.
+  - Edit "AudioRecAndPlayInterfaceController" with your group identifier.
 
 ##Contents
 
@@ -83,8 +85,6 @@ Get an image data from network using NSURLSession.
 
 ##Known Issues
 
-- Audio Rec & Play
-  - Can't record on a real watch device. (Works on simulator)
 - Heart Rate
   - Under development
 - Open System URL
