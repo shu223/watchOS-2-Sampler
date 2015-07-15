@@ -12,13 +12,17 @@
 		8A0560D41B28ED1400E5E00C /* AudioRecAndPlayInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0560D31B28ED1400E5E00C /* AudioRecAndPlayInterfaceController.swift */; };
 		8A2DF2731B2B85DE0025DDD7 /* CoordinatedAnimationsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2DF2721B2B85DE0025DDD7 /* CoordinatedAnimationsInterfaceController.swift */; };
 		8A2DF2751B2BA3430025DDD7 /* PickerStylesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2DF2741B2BA3430025DDD7 /* PickerStylesInterfaceController.swift */; };
+		8A2F0AC21B5509BD0064EBCF /* GradationInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2F0AC11B5509BD0064EBCF /* GradationInterfaceController.m */; };
 		8A3C17F91B2CB7FF00D75AB6 /* AccelerometerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C17F81B2CB7FF00D75AB6 /* AccelerometerInterfaceController.swift */; };
 		8A3C17FB1B2CB83F00D75AB6 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3C17FA1B2CB83F00D75AB6 /* CoreMotion.framework */; };
+		8A4D60C21B5444360050C06F /* DrawPathsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4D60C11B5444360050C06F /* DrawPathsInterfaceController.swift */; };
 		8A50D5FF1B2CCDD400F4C7A2 /* HeartRateInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A50D5FE1B2CCDD400F4C7A2 /* HeartRateInterfaceController.swift */; };
 		8A50D6011B2CDC4600F4C7A2 /* TableAnimationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A50D6001B2CDC4600F4C7A2 /* TableAnimationInterfaceController.swift */; };
 		8A50D6031B2CE4C500F4C7A2 /* AnimatedPropertiesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A50D6021B2CE4C500F4C7A2 /* AnimatedPropertiesInterfaceController.swift */; };
 		8A50D6091B2CEDC600F4C7A2 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A50D6081B2CEDC600F4C7A2 /* HealthKit.framework */; };
 		8A732D791B2FE32D00551CE3 /* MessageToPhoneInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A732D781B2FE32D00551CE3 /* MessageToPhoneInterfaceController.swift */; };
+		8A7473271B54D974008D211B /* sample.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8A7473261B54D974008D211B /* sample.svg */; };
+		8A7473331B54DA98008D211B /* PocketSVG.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7473321B54DA98008D211B /* PocketSVG.m */; };
 		8A976E5F1B2C9AC8008851CD /* OpenSystemURLInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A976E5E1B2C9AC8008851CD /* OpenSystemURLInterfaceController.swift */; };
 		8AA60E2A1B28E20300BE313B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA60E291B28E20300BE313B /* AppDelegate.swift */; };
 		8AA60E2C1B28E20300BE313B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA60E2B1B28E20300BE313B /* ViewController.swift */; };
@@ -108,8 +112,11 @@
 		8A1FDFC21B28F77B0098FFAA /* watchOS2Sampler WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "watchOS2Sampler WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
 		8A2DF2721B2B85DE0025DDD7 /* CoordinatedAnimationsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatedAnimationsInterfaceController.swift; sourceTree = "<group>"; };
 		8A2DF2741B2BA3430025DDD7 /* PickerStylesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerStylesInterfaceController.swift; sourceTree = "<group>"; };
+		8A2F0AC01B5509BD0064EBCF /* GradationInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradationInterfaceController.h; sourceTree = "<group>"; };
+		8A2F0AC11B5509BD0064EBCF /* GradationInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradationInterfaceController.m; sourceTree = "<group>"; };
 		8A3C17F81B2CB7FF00D75AB6 /* AccelerometerInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerometerInterfaceController.swift; sourceTree = "<group>"; };
 		8A3C17FA1B2CB83F00D75AB6 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		8A4D60C11B5444360050C06F /* DrawPathsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawPathsInterfaceController.swift; sourceTree = "<group>"; };
 		8A50D5FE1B2CCDD400F4C7A2 /* HeartRateInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateInterfaceController.swift; sourceTree = "<group>"; };
 		8A50D6001B2CDC4600F4C7A2 /* TableAnimationInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableAnimationInterfaceController.swift; sourceTree = "<group>"; };
 		8A50D6021B2CE4C500F4C7A2 /* AnimatedPropertiesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedPropertiesInterfaceController.swift; sourceTree = "<group>"; };
@@ -117,6 +124,9 @@
 		8A50D6071B2CEDC600F4C7A2 /* watchOS2Sampler WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "watchOS2Sampler WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		8A50D6081B2CEDC600F4C7A2 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		8A732D781B2FE32D00551CE3 /* MessageToPhoneInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageToPhoneInterfaceController.swift; sourceTree = "<group>"; };
+		8A7473261B54D974008D211B /* sample.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = sample.svg; sourceTree = "<group>"; };
+		8A7473311B54DA98008D211B /* PocketSVG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PocketSVG.h; sourceTree = "<group>"; };
+		8A7473321B54DA98008D211B /* PocketSVG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PocketSVG.m; sourceTree = "<group>"; };
 		8A976E5E1B2C9AC8008851CD /* OpenSystemURLInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSystemURLInterfaceController.swift; sourceTree = "<group>"; };
 		8AA60E261B28E20300BE313B /* watchOS2Sampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watchOS2Sampler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA60E291B28E20300BE313B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -186,6 +196,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A7473251B54D974008D211B /* svg */ = {
+			isa = PBXGroup;
+			children = (
+				8A7473261B54D974008D211B /* sample.svg */,
+			);
+			path = svg;
+			sourceTree = "<group>";
+		};
+		8A7473281B54DA49008D211B /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				8A7473301B54DA98008D211B /* PocketSVG */,
+			);
+			path = libs;
+			sourceTree = SOURCE_ROOT;
+		};
+		8A7473301B54DA98008D211B /* PocketSVG */ = {
+			isa = PBXGroup;
+			children = (
+				8A7473311B54DA98008D211B /* PocketSVG.h */,
+				8A7473321B54DA98008D211B /* PocketSVG.m */,
+			);
+			path = PocketSVG;
+			sourceTree = "<group>";
+		};
 		8AA60E1D1B28E20300BE313B = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				8A50D6071B2CEDC600F4C7A2 /* watchOS2Sampler WatchKit Extension.entitlements */,
+				8A7473281B54DA49008D211B /* libs */,
 				8AD5D7861B2965D5001924F0 /* Resources */,
 				8AA60E6E1B28E20300BE313B /* Assets.xcassets */,
 				8AA60E621B28E20300BE313B /* Supporting Files */,
@@ -299,6 +335,9 @@
 				8A50D5FE1B2CCDD400F4C7A2 /* HeartRateInterfaceController.swift */,
 				8A50D6001B2CDC4600F4C7A2 /* TableAnimationInterfaceController.swift */,
 				8A50D6021B2CE4C500F4C7A2 /* AnimatedPropertiesInterfaceController.swift */,
+				8A4D60C11B5444360050C06F /* DrawPathsInterfaceController.swift */,
+				8A2F0AC01B5509BD0064EBCF /* GradationInterfaceController.h */,
+				8A2F0AC11B5509BD0064EBCF /* GradationInterfaceController.m */,
 				8A0560D31B28ED1400E5E00C /* AudioRecAndPlayInterfaceController.swift */,
 				8AD5D7841B29641A001924F0 /* AudioFilePlayerInterfaceController.swift */,
 				8AD5D78C1B2969FB001924F0 /* TapticInterfaceController.swift */,
@@ -315,6 +354,7 @@
 		8AD5D7861B2965D5001924F0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8A7473251B54D974008D211B /* svg */,
 				8AD5D7871B2965D5001924F0 /* sounds */,
 			);
 			path = Resources;
@@ -523,6 +563,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AD5D7891B2965D5001924F0 /* se_tap.m4a in Resources */,
+				8A7473271B54D974008D211B /* sample.svg in Resources */,
 				8AA60E6F1B28E20300BE313B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,10 +602,12 @@
 			files = (
 				8A0560D21B28E74D00E5E00C /* RowController.swift in Sources */,
 				8A3C17F91B2CB7FF00D75AB6 /* AccelerometerInterfaceController.swift in Sources */,
+				8A2F0AC21B5509BD0064EBCF /* GradationInterfaceController.m in Sources */,
 				8A50D5FF1B2CCDD400F4C7A2 /* HeartRateInterfaceController.swift in Sources */,
 				8AA60E691B28E20300BE313B /* NotificationController.swift in Sources */,
 				8ACBDCF31B2CC582006D98E1 /* PedometerInterfaceController.swift in Sources */,
 				8AA60E671B28E20300BE313B /* ExtensionDelegate.swift in Sources */,
+				8A4D60C21B5444360050C06F /* DrawPathsInterfaceController.swift in Sources */,
 				8AA60E6D1B28E20300BE313B /* ComplicationController.swift in Sources */,
 				8A976E5F1B2C9AC8008851CD /* OpenSystemURLInterfaceController.swift in Sources */,
 				8AFECCB41B2A3246005C46D1 /* AlertInterfaceController.swift in Sources */,
@@ -575,6 +618,7 @@
 				8A0560D41B28ED1400E5E00C /* AudioRecAndPlayInterfaceController.swift in Sources */,
 				8A50D6031B2CE4C500F4C7A2 /* AnimatedPropertiesInterfaceController.swift in Sources */,
 				8ACBDCF01B2CBC23006D98E1 /* GyroscopeInterfaceController.swift in Sources */,
+				8A7473331B54DA98008D211B /* PocketSVG.m in Sources */,
 				8AD5D78D1B2969FB001924F0 /* TapticInterfaceController.swift in Sources */,
 				8A2DF2731B2B85DE0025DDD7 /* CoordinatedAnimationsInterfaceController.swift in Sources */,
 				8AD5D7851B29641A001924F0 /* AudioFilePlayerInterfaceController.swift in Sources */,

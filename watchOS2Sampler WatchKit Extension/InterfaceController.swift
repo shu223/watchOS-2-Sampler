@@ -57,6 +57,16 @@ class InterfaceController: WKInterfaceController {
                 kItemKeyClassPrefix: "AnimatedProperties",
             ],
             [
+                kItemKeyTitle: "Draw Paths",
+                kItemKeyDetail: "Draw paths with Core Graphics.",
+                kItemKeyClassPrefix: "DrawPaths",
+            ],
+            [
+                kItemKeyTitle: "Gradations",
+                kItemKeyDetail: "Draw gradations with Core Graphics.",
+                kItemKeyClassPrefix: "Gradation",
+            ],
+            [
                 kItemKeyTitle: "Audio Rec & Play",
                 kItemKeyDetail: "Record and play audio.",
                 kItemKeyClassPrefix: "AudioRecAndPlay",

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc" defaultGlanceController="0uZ-2p-rRc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8152.3" systemVersion="14E46" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc" defaultGlanceController="0uZ-2p-rRc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8066.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8077.2"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Symbol.ttf">
@@ -527,6 +527,69 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="1305" y="796.5"/>
+        </scene>
+        <!--DrawPaths-->
+        <scene sceneID="TGt-lV-ltx">
+            <objects>
+                <controller identifier="DrawPaths" hidesWhenLoading="NO" id="NUM-Dt-VkP" customClass="DrawPathsInterfaceController" customModule="watchOS2Sampler_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="Im1-8y-3my">
+                            <items>
+                                <button width="0.35999999999999999" alignment="left" title="Stroke" id="cLS-jP-jvA">
+                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                    <connections>
+                                        <action selector="strokeBtnTapped" destination="NUM-Dt-VkP" id="Lvk-1h-0wA"/>
+                                    </connections>
+                                </button>
+                                <button width="0.34999999999999998" alignment="left" title="Bezier" id="knZ-QQ-eZc">
+                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                    <connections>
+                                        <action selector="bezierBtnTapped" destination="NUM-Dt-VkP" id="m0b-cw-AaE"/>
+                                    </connections>
+                                </button>
+                                <button width="0.28000000000000003" alignment="left" title="SVG" id="lCl-cI-45c">
+                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                    <connections>
+                                        <action selector="svgBtnTapped" destination="NUM-Dt-VkP" id="EPf-7h-Hjk"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <imageView width="100" height="100" alignment="center" contentMode="scaleAspectFit" id="YAy-vC-pme"/>
+                    </items>
+                    <connections>
+                        <outlet property="image" destination="YAy-vC-pme" id="C2L-9j-SfR"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1477" y="346.5"/>
+        </scene>
+        <!--Gradation-->
+        <scene sceneID="z9j-jh-916">
+            <objects>
+                <controller identifier="Gradation" hidesWhenLoading="NO" id="SZT-52-KSP" customClass="GradationInterfaceController">
+                    <items>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="QQv-eI-BS4">
+                            <items>
+                                <button width="0.5" alignment="left" title="Linear" id="eFW-w6-RZR">
+                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                    <connections>
+                                        <action selector="linearBtnTapped:" destination="SZT-52-KSP" id="dRQ-21-f9a"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" alignment="left" title="Radial" id="k0U-qb-tff">
+                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                </button>
+                            </items>
+                        </group>
+                        <imageView width="100" height="100" alignment="center" contentMode="scaleAspectFit" id="5S5-hf-rge"/>
+                    </items>
+                    <connections>
+                        <outlet property="image" destination="5S5-hf-rge" id="5up-yi-ren"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1477" y="575.5"/>
         </scene>
     </scenes>
 </document>

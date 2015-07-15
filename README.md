@@ -44,6 +44,15 @@ Insert and remove animations for WKInterfaceTable.
 
 Animate width/height and alignments.
 
+###Draw Paths
+
+Draw paths with Core Graphics.
+
+###Gradations
+
+Draw gradations with Core Graphics.
+
+
 ###Audio Rec & Play
 
 Record and play audio.
