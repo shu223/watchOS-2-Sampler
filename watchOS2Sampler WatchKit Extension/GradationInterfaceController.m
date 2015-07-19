@@ -51,9 +51,9 @@
     CGPoint startPoint = CGPointMake(0, 0);
     CGPoint endPoint = CGPointMake(100, 100);
     
-    CGFloat *locations = malloc(2 * sizeof(CGFloat));
-    locations[0] = 0.0;
-    locations[1] = 1.0;
+    CGFloat locations[2] = {
+        0, 1
+    };
 
     CGGradientRef gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), gradientColors, locations);
     CGContextDrawLinearGradient(context,
