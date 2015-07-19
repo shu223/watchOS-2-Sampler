@@ -33,20 +33,6 @@
     [super didDeactivate];
 }
 
-- (CGContextRef)createBitmapContextWithSize:(CGSize)size {
-
-    CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
-    CGContextRef context = CGBitmapContextCreate(nil,
-                                                 size.width,
-                                                 size.height,
-                                                 8,
-                                                 size.width * 4,
-                                                 space,
-                                                 kCGImageAlphaPremultipliedLast);
-    
-    return context;
-}
-
 // =============================================================================
 #pragma mark - Actions
 
@@ -54,7 +40,7 @@
 
     CGSize size = CGSizeMake(100, 100);
     UIGraphicsBeginImageContext(size);
-    CGContextRef context = [self createBitmapContextWithSize:size];
+    CGContextRef context = UIGraphicsGetCurrentContext();
 
     CGContextSaveGState(context);
     

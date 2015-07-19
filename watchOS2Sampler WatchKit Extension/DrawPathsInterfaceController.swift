@@ -32,23 +32,6 @@ class DrawPathsInterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
     
-    private func createBitmapContext(size: CGSize) -> CGContext? {
-
-        let space = CGColorSpaceCreateDeviceRGB()!
-        
-        let context = CGBitmapContextCreate(
-            nil,
-            Int(size.width),
-            Int(size.height),
-            8,
-            Int(size.width * 4),
-            space,
-            UInt32(CGImageAlphaInfo.PremultipliedLast.rawValue))
-        
-        return context
-    }
-
-    
     // =========================================================================
     // MARK: - Actions
     
@@ -57,7 +40,7 @@ class DrawPathsInterfaceController: WKInterfaceController {
         // Create a graphics context
         let size = CGSizeMake(100, 100)
         UIGraphicsBeginImageContext(size)
-        let context = createBitmapContext(size)
+        let context = UIGraphicsGetCurrentContext()
         
         // Setup for the path appearance
         CGContextSetStrokeColorWithColor(context, UIColor.whiteColor().CGColor)
@@ -86,8 +69,8 @@ class DrawPathsInterfaceController: WKInterfaceController {
         // Create a graphics context
         let size = CGSizeMake(100, 100)
         UIGraphicsBeginImageContext(size)
-        let context = createBitmapContext(size)
-        UIGraphicsPushContext(context!)
+        let context = UIGraphicsGetCurrentContext()
+        UIGraphicsPushContext(context)
         
         // Setup for the path appearance
         UIColor.greenColor().setStroke()
@@ -116,8 +99,8 @@ class DrawPathsInterfaceController: WKInterfaceController {
         // Create a graphics context
         let size = CGSizeMake(512, 512)
         UIGraphicsBeginImageContext(size)
-        let context = createBitmapContext(size)
-        UIGraphicsPushContext(context!)
+        let context = UIGraphicsGetCurrentContext()
+        UIGraphicsPushContext(context)
         
         // Setup for the path appearance
         UIColor.yellowColor().setFill()
