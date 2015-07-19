@@ -580,7 +580,7 @@
                                 <button width="0.5" alignment="left" title="Radial" id="k0U-qb-tff">
                                     <fontDescription key="font" type="system" pointSize="11"/>
                                     <connections>
-                                        <action selector="radicalBtnAction:" destination="SZT-52-KSP" id="vUG-yv-CY2"/>
+                                        <action selector="radialBtnTapped:" destination="SZT-52-KSP" id="XdV-Go-Qnd"/>
                                     </connections>
                                 </button>
                             </items>

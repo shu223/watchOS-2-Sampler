@@ -75,7 +75,7 @@
     [self.image setImage:uiimage];
 }
 
-- (IBAction)radicalBtnAction:(id)sender {
+- (IBAction)radialBtnTapped:(id)sender {
     CGSize size = CGSizeMake(100, 100);
     UIGraphicsBeginImageContext(size);
     CGContextRef context = UIGraphicsGetCurrentContext();
