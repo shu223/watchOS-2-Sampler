@@ -33,20 +33,6 @@
     [super didDeactivate];
 }
 
-- (CGContextRef)createBitmapContextWithSize:(CGSize)size {
-
-    CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
-    CGContextRef context = CGBitmapContextCreate(nil,
-                                                 size.width,
-                                                 size.height,
-                                                 8,
-                                                 size.width * 4,
-                                                 space,
-                                                 kCGImageAlphaPremultipliedLast);
-    
-    return context;
-}
-
 // =============================================================================
 #pragma mark - Actions
 
@@ -54,7 +40,7 @@
 
     CGSize size = CGSizeMake(100, 100);
     UIGraphicsBeginImageContext(size);
-    CGContextRef context = [self createBitmapContextWithSize:size];
+    CGContextRef context = UIGraphicsGetCurrentContext();
 
     CGContextSaveGState(context);
     
@@ -65,9 +51,9 @@
     CGPoint startPoint = CGPointMake(0, 0);
     CGPoint endPoint = CGPointMake(100, 100);
     
-    CGFloat *locations = malloc(2 * sizeof(CGFloat));
-    locations[0] = 0.0;
-    locations[1] = 1.0;
+    CGFloat locations[2] = {
+        0, 1
+    };
 
     CGGradientRef gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), gradientColors, locations);
     CGContextDrawLinearGradient(context,
@@ -88,6 +74,39 @@
     
     [self.image setImage:uiimage];
 }
+
+- (IBAction)radialBtnTapped:(id)sender {
+    CGSize size = CGSizeMake(100, 100);
+    UIGraphicsBeginImageContext(size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSaveGState(context);
+    
+    CFMutableArrayRef gradientColors = CFArrayCreateMutable(kCFAllocatorDefault, 2, &kCFTypeArrayCallBacks);
+    CFArrayAppendValue(gradientColors, [UIColor greenColor].CGColor);
+    CFArrayAppendValue(gradientColors, [UIColor blueColor].CGColor);
+    
+    CGPoint center = CGPointMake(50, 50);
+    CGFloat locations[2] = {
+        0, 1
+    };
+    
+    CGGradientRef gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), gradientColors, locations);
+    CGContextDrawRadialGradient(context, gradient, center, 0, center, sqrt(pow(50, 2) * 2), kCGGradientDrawsBeforeStartLocation);
+    CGGradientRelease(gradient);
+    CFRelease(gradientColors);
+    CGContextRestoreGState(context);
+    
+    // Convert to UIImage
+    CGImageRef cgimage = CGBitmapContextCreateImage(context);
+    UIImage *uiimage = [UIImage imageWithCGImage:cgimage];
+    
+    // End the graphics context
+    UIGraphicsEndImageContext();
+    
+    [self.image setImage:uiimage];
+}
+
 
 @end
 
