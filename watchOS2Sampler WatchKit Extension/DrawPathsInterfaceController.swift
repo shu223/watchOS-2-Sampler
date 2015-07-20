@@ -70,7 +70,6 @@ class DrawPathsInterfaceController: WKInterfaceController {
         let size = CGSizeMake(100, 100)
         UIGraphicsBeginImageContext(size)
         let context = UIGraphicsGetCurrentContext()
-        UIGraphicsPushContext(context)
         
         // Setup for the path appearance
         UIColor.greenColor().setStroke()
@@ -88,7 +87,6 @@ class DrawPathsInterfaceController: WKInterfaceController {
         let uiimage = UIImage(CGImage: cgimage!)
         
         // End the graphics context
-        UIGraphicsPopContext()
         UIGraphicsEndImageContext()
         
         image.setImage(uiimage)
@@ -100,7 +98,6 @@ class DrawPathsInterfaceController: WKInterfaceController {
         let size = CGSizeMake(512, 512)
         UIGraphicsBeginImageContext(size)
         let context = UIGraphicsGetCurrentContext()
-        UIGraphicsPushContext(context)
         
         // Setup for the path appearance
         UIColor.yellowColor().setFill()
@@ -116,7 +113,6 @@ class DrawPathsInterfaceController: WKInterfaceController {
         let uiimage = UIImage(CGImage: cgimage!)
         
         // End the graphics context
-        UIGraphicsPopContext()
         UIGraphicsEndImageContext()
         
         image.setImage(uiimage)
