@@ -44,11 +44,11 @@ Insert and remove animations for WKInterfaceTable.
 
 Animate width/height and alignments.
 
-###Draw Paths
+###Draw Paths (Updated by [hoppenichu](https://github.com/hoppenichu))
 
 Draw paths with Core Graphics.
 
-###Gradations
+###Gradations (Updated by [hoppenichu](https://github.com/hoppenichu))
 
 Draw gradations with Core Graphics.
 
@@ -87,7 +87,7 @@ Open Tel or SMS app using openSystemURL: method.
 
 Play an audio file with WKAudioFilePlayer.
 
-###Network Access (by [KAMEDAkyosuke](https://github.com/KAMEDAkyosuke))
+###Network Access (Created by [KAMEDAkyosuke](https://github.com/KAMEDAkyosuke))
 
 Get an image data from network using NSURLSession.
 
