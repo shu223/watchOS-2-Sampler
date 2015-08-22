@@ -24,9 +24,19 @@ Code examples for new features of watchOS 2.
 
 Access to Accelerometer data using CoreMotion.
 
-###Gyroscope
+###Gyroscope (Not Available)
 
-Access to Gyroscope data using CoreMotion.
+Access to Gyroscope data using CoreMotion. 
+
+**These APIs are available, however CMMotionManager always returns `false` for `gyroAvailable`. So actually it's not available for now.**
+
+
+###Device Motion (Not Available)
+
+Access to DeviceMotion data using CoreMotion. 
+
+**These APIs are available, however CMMotionManager always returns `false` for `deviceMotionAvailable`. So actually it's not available for now.**
+
 
 ###Pedometer
 

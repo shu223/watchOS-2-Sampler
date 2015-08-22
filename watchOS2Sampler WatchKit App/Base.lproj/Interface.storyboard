@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8152.3" systemVersion="15A215h" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc" defaultGlanceController="0uZ-2p-rRc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8077.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8089"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Symbol.ttf">
@@ -593,6 +593,45 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="1477" y="575.5"/>
+        </scene>
+        <!--DeviceMotion-->
+        <scene sceneID="16X-qI-ENa">
+            <objects>
+                <controller identifier="DeviceMotion" hidesWhenLoading="NO" id="CGm-B4-m9Q" customClass="DeviceMotionInterfaceController" customModule="watchOS2Sampler_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="oLK-Rj-vx4">
+                            <items>
+                                <label alignment="left" text="x" id="E4A-ec-AP8">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Label" textAlignment="right" id="Gae-yC-qYl"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="QYN-Y7-fVF">
+                            <items>
+                                <label alignment="left" text="y" id="23L-vG-Nci">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Label" textAlignment="right" id="iFe-Tf-63u"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="CNj-Kz-zN6">
+                            <items>
+                                <label alignment="left" text="z" id="uMd-83-qYc">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Label" textAlignment="right" id="pjd-Dy-Au7"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="labelX" destination="Gae-yC-qYl" id="s3v-4k-7Is"/>
+                        <outlet property="labelY" destination="iFe-Tf-63u" id="xk2-5l-V2G"/>
+                        <outlet property="labelZ" destination="pjd-Dy-Au7" id="Pt7-rJ-qKG"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1477" y="796"/>
         </scene>
     </scenes>
 </document>

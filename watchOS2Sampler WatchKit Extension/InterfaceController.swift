@@ -37,6 +37,11 @@ class InterfaceController: WKInterfaceController {
                 kItemKeyClassPrefix: "Gyroscope",
             ],
             [
+                kItemKeyTitle: "Device Motion",
+                kItemKeyDetail: "Access to DevicemMotion data using CoreMotion.",
+                kItemKeyClassPrefix: "DeviceMotion",
+            ],
+            [
                 kItemKeyTitle: "Pedometer",
                 kItemKeyDetail: "Counting steps demo using CMPedometer.",
                 kItemKeyClassPrefix: "Pedometer",

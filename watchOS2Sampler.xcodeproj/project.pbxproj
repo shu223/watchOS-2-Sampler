@@ -41,6 +41,7 @@
 		8AA60E6B1B28E20300BE313B /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA60E6A1B28E20300BE313B /* GlanceController.swift */; };
 		8AA60E6D1B28E20300BE313B /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA60E6C1B28E20300BE313B /* ComplicationController.swift */; };
 		8AA60E6F1B28E20300BE313B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AA60E6E1B28E20300BE313B /* Assets.xcassets */; };
+		8AAD004E1B8874D900B28425 /* DeviceMotionInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAD004D1B8874D900B28425 /* DeviceMotionInterfaceController.swift */; };
 		8ACBDCF01B2CBC23006D98E1 /* GyroscopeInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACBDCEF1B2CBC23006D98E1 /* GyroscopeInterfaceController.swift */; };
 		8ACBDCF31B2CC582006D98E1 /* PedometerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACBDCF21B2CC582006D98E1 /* PedometerInterfaceController.swift */; };
 		8AD5D7851B29641A001924F0 /* AudioFilePlayerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD5D7841B29641A001924F0 /* AudioFilePlayerInterfaceController.swift */; };
@@ -154,6 +155,7 @@
 		8AA60E6C1B28E20300BE313B /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		8AA60E6E1B28E20300BE313B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AA60E701B28E20300BE313B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AAD004D1B8874D900B28425 /* DeviceMotionInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceMotionInterfaceController.swift; sourceTree = "<group>"; };
 		8ACBDCEF1B2CBC23006D98E1 /* GyroscopeInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GyroscopeInterfaceController.swift; sourceTree = "<group>"; };
 		8ACBDCF21B2CC582006D98E1 /* PedometerInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PedometerInterfaceController.swift; sourceTree = "<group>"; };
 		8AD5D7841B29641A001924F0 /* AudioFilePlayerInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioFilePlayerInterfaceController.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 			children = (
 				8A3C17F81B2CB7FF00D75AB6 /* AccelerometerInterfaceController.swift */,
 				8ACBDCEF1B2CBC23006D98E1 /* GyroscopeInterfaceController.swift */,
+				8AAD004D1B8874D900B28425 /* DeviceMotionInterfaceController.swift */,
 				8ACBDCF21B2CC582006D98E1 /* PedometerInterfaceController.swift */,
 				8A50D5FE1B2CCDD400F4C7A2 /* HeartRateInterfaceController.swift */,
 				8A50D6001B2CDC4600F4C7A2 /* TableAnimationInterfaceController.swift */,
@@ -623,6 +626,7 @@
 				8A2DF2731B2B85DE0025DDD7 /* CoordinatedAnimationsInterfaceController.swift in Sources */,
 				8AD5D7851B29641A001924F0 /* AudioFilePlayerInterfaceController.swift in Sources */,
 				8A2DF2751B2BA3430025DDD7 /* PickerStylesInterfaceController.swift in Sources */,
+				8AAD004E1B8874D900B28425 /* DeviceMotionInterfaceController.swift in Sources */,
 				0CE334881B31754D004121A5 /* NSURLSessionInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
