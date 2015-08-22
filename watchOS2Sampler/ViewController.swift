@@ -35,6 +35,11 @@ class ViewController: UIViewController {
                 title: "Failed to send",
                 message: "Apple Watch is not reachable.",
                 preferredStyle: UIAlertControllerStyle.Alert)
+            let okAction = UIAlertAction(
+                title: "OK",
+                style: UIAlertActionStyle.Cancel,
+                handler: nil)
+            alert.addAction(okAction)
             self.presentViewController(alert, animated: true, completion: nil)
             
             return
@@ -45,7 +50,7 @@ class ViewController: UIViewController {
             message, replyHandler: { (replyMessage) -> Void in
                 //
             }) { (error) -> Void in
-                print(error.localizedDescription)
+                print(error)
         }
     }
 }
