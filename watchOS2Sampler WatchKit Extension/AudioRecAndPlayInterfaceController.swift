@@ -65,6 +65,15 @@ class AudioRecAndPlayInterfaceController: WKInterfaceController {
     
     @IBAction func recBtnTapped() {
 
+        self.presentAudioRecorderControllerWithOutputURL(
+            self.recFileURL(),
+            preset: WKAudioRecorderPreset.HighQualityAudio,
+            options: nil,
+            completion:
+            { (didSave, error) -> Void in
+                self.recLabel.setText("didSave:\(didSave), error:\(error)")
+            })
+
 //        self.presentAudioRecordingControllerWithOutputURL(
 //            self.recFileURL(),
 //            preset: WKAudioRecordingPreset.NarrowBandSpeech,
