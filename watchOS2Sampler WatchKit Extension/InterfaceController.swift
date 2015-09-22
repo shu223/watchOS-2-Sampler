@@ -27,6 +27,46 @@ class InterfaceController: WKInterfaceController {
 
         items = [
             [
+                kItemKeyTitle: "Animated Props",
+                kItemKeyDetail: "Animate width/height, alpha and alignments.",
+                kItemKeyClassPrefix: "AnimatedProperties",
+            ],
+            [
+                kItemKeyTitle: "Table Animations",
+                kItemKeyDetail: "Insert and remove animations for WKInterfaceTable.",
+                kItemKeyClassPrefix: "TableAnimation",
+            ],
+            [
+                kItemKeyTitle: "Picker Styles",
+                kItemKeyDetail: "WKInterfacePicker styles catalog.",
+                kItemKeyClassPrefix: "PickerStyles",
+            ],
+            [
+                kItemKeyTitle: "Taptic Engine",
+                kItemKeyDetail: "Access to the Taptic engine using playHaptic method.",
+                kItemKeyClassPrefix: "Taptic",
+            ],
+            [
+                kItemKeyTitle: "Audio Rec & Play",
+                kItemKeyDetail: "Record and play audio.",
+                kItemKeyClassPrefix: "AudioRecAndPlay",
+            ],
+            [
+                kItemKeyTitle: "DigitalCrown-Anim",
+                kItemKeyDetail: "Coordinated Animations with WKInterfacePicker and Digital Crown.",
+                kItemKeyClassPrefix: "CoordinatedAnimations",
+            ],
+            [
+                kItemKeyTitle: "Draw Paths",
+                kItemKeyDetail: "Draw paths with Core Graphics.",
+                kItemKeyClassPrefix: "DrawPaths",
+            ],
+            [
+                kItemKeyTitle: "Gradations",
+                kItemKeyDetail: "Draw gradations with Core Graphics.",
+                kItemKeyClassPrefix: "Gradation",
+            ],
+            [
                 kItemKeyTitle: "Accelerometer",
                 kItemKeyDetail: "Access to Accelerometer data using CoreMotion.",
                 kItemKeyClassPrefix: "Accelerometer"
@@ -46,55 +86,15 @@ class InterfaceController: WKInterfaceController {
                 kItemKeyDetail: "Counting steps demo using CMPedometer.",
                 kItemKeyClassPrefix: "Pedometer",
             ],
-            [
-                kItemKeyTitle: "Heart Rate",
-                kItemKeyDetail: "Access to Heart Rate data using HealthKit.",
-                kItemKeyClassPrefix: "HeartRate",
-            ],
-            [
-                kItemKeyTitle: "Table Animations",
-                kItemKeyDetail: "Insert and remove animations for WKInterfaceTable.",
-                kItemKeyClassPrefix: "TableAnimation",
-            ],
-            [
-                kItemKeyTitle: "Animated Props",
-                kItemKeyDetail: "Animate width/height and alignments.",
-                kItemKeyClassPrefix: "AnimatedProperties",
-            ],
-            [
-                kItemKeyTitle: "Draw Paths",
-                kItemKeyDetail: "Draw paths with Core Graphics.",
-                kItemKeyClassPrefix: "DrawPaths",
-            ],
-            [
-                kItemKeyTitle: "Gradations",
-                kItemKeyDetail: "Draw gradations with Core Graphics.",
-                kItemKeyClassPrefix: "Gradation",
-            ],
-            [
-                kItemKeyTitle: "Audio Rec & Play",
-                kItemKeyDetail: "Record and play audio.",
-                kItemKeyClassPrefix: "AudioRecAndPlay",
-            ],
-            [
-                kItemKeyTitle: "Picker Styles",
-                kItemKeyDetail: "WKInterfacePicker styles catalog.",
-                kItemKeyClassPrefix: "PickerStyles",
-            ],
-            [
-                kItemKeyTitle: "Taptic Engine",
-                kItemKeyDetail: "Access to the Taptic engine using playHaptic method.",
-                kItemKeyClassPrefix: "Taptic",
-            ],
+//            [
+//                kItemKeyTitle: "Heart Rate",
+//                kItemKeyDetail: "Access to Heart Rate data using HealthKit.",
+//                kItemKeyClassPrefix: "HeartRate",
+//            ],
             [
                 kItemKeyTitle: "Alert",
                 kItemKeyDetail: "Present an alert or action sheet.",
                 kItemKeyClassPrefix: "Alert",
-            ],
-            [
-                kItemKeyTitle: "DigitalCrown-Anim",
-                kItemKeyDetail: "Coordinated Animations with WKInterfacePicker and Digital Crown.",
-                kItemKeyClassPrefix: "CoordinatedAnimations",
             ],
             [
                 kItemKeyTitle: "Interactive Messaging",
@@ -102,14 +102,14 @@ class InterfaceController: WKInterfaceController {
                 kItemKeyClassPrefix: "MessageToPhone",
             ],
             [
-                kItemKeyTitle: "Open System URL",
-                kItemKeyDetail: "Open Tel or SMS app using openSystemURL: method.",
-                kItemKeyClassPrefix: "OpenSystemURL",
-            ],
-            [
                 kItemKeyTitle: "Audio File Player",
                 kItemKeyDetail: "Play an audio file with WKAudioFilePlayer.",
                 kItemKeyClassPrefix: "AudioFilePlayer",
+            ],
+            [
+                kItemKeyTitle: "Open System URL",
+                kItemKeyDetail: "Open Tel or SMS app using openSystemURL: method.",
+                kItemKeyClassPrefix: "OpenSystemURL",
             ],
             [
                 kItemKeyTitle: "Network Access",
