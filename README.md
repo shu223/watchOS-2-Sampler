@@ -117,7 +117,7 @@ Counting steps demo using CMPedometer.
 
 Present an alert or action sheet.
 
-<img src="ResourcesForREADME/alert.png" width="136">
+<img src="ResourcesForREADME/alert.png" width="414">
 
 
 ###Interactive Messaging
