@@ -124,6 +124,8 @@ Present an alert or action sheet.
 
 Sending message to phone and receiving from phone demo with WatchConnectivity.
 
+<img src="ResourcesForREADME/interactive.png" width="136">
+
 
 ###Audio File Player
 
