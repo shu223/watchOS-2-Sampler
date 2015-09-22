@@ -41,22 +41,10 @@ class AudioRecAndPlayInterfaceController: WKInterfaceController {
         
         // Must use a shared container
         let fileManager = NSFileManager.defaultManager()
-        let container = fileManager.containerURLForSecurityApplicationGroupIdentifier("<# group.xx.xx #>") // replace with your own identifier
-        let audioFileURL = container!.URLByAppendingPathComponent("rec.m4a")
+        let container = fileManager.containerURLForSecurityApplicationGroupIdentifier("group.com.shu223.watchos2sampler") // replace with your own identifier!!!!
+        let audioFileURL = container!.URLByAppendingPathComponent("rec.mp4")
         
         return audioFileURL
-        
-        /*
-        let filePaths = NSSearchPathForDirectoriesInDomains(
-            NSSearchPathDirectory.DocumentDirectory,
-            NSSearchPathDomainMask.UserDomainMask,
-            true)
-        let documentDir = filePaths.first!
-        let filePath = documentDir + "rec.m4a"
-        let fileUrl = NSURL.fileURLWithPath(filePath)
-        
-        return fileUrl
-        */
     }
     
     
@@ -71,17 +59,9 @@ class AudioRecAndPlayInterfaceController: WKInterfaceController {
             options: nil,
             completion:
             { (didSave, error) -> Void in
+                print("error:\(error)\n")
                 self.recLabel.setText("didSave:\(didSave), error:\(error)")
             })
-
-//        self.presentAudioRecordingControllerWithOutputURL(
-//            self.recFileURL(),
-//            preset: WKAudioRecordingPreset.NarrowBandSpeech,
-//            maximumDuration: 5.0,
-//            actionTitle: "SomeTitle") { (didSave, error) -> Void in
-//                
-//                self.recLabel.setText("didSave:\(didSave), error:\(error)")
-//        }
     }
     
     @IBAction func playBtnTapped() {
