@@ -26,17 +26,17 @@ class HeartRateInterfaceController: WKInterfaceController {
     override func willActivate() {
         super.willActivate()
         
-        if HKHealthStore.isHealthDataAvailable() != true {
-            self.label.setText("not availabel")
+        guard HKHealthStore.isHealthDataAvailable() else {
+            self.label.setText("not available")
             return
         }
         
-        let dataTypes = NSSet(object: heartRateType) as! Set<HKObjectType>
+        let dataTypes = Set([heartRateType])
         
         healthStore.requestAuthorizationToShareTypes(nil, readTypes: dataTypes) { (success, error) -> Void in
-            
-            if success != true {
+            guard success else {
                 self.label.setText("not allowed")
+                return
             }
         }
     }
