@@ -86,11 +86,11 @@ class InterfaceController: WKInterfaceController {
                 kItemKeyDetail: "Counting steps demo using CMPedometer.",
                 kItemKeyClassPrefix: "Pedometer",
             ],
-//            [
-//                kItemKeyTitle: "Heart Rate",
-//                kItemKeyDetail: "Access to Heart Rate data using HealthKit.",
-//                kItemKeyClassPrefix: "HeartRate",
-//            ],
+            [
+                kItemKeyTitle: "Heart Rate",
+                kItemKeyDetail: "Access to Heart Rate data using HealthKit.",
+                kItemKeyClassPrefix: "HeartRate",
+            ],
             [
                 kItemKeyTitle: "Alert",
                 kItemKeyDetail: "Present an alert or action sheet.",
