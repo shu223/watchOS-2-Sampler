@@ -167,6 +167,11 @@
                                 <action selector="fetchBtnTapped" destination="6JP-Ej-cqj" id="9MD-Fb-4X0"/>
                             </connections>
                         </button>
+                        <button width="1" alignment="left" title="End" id="u3w-cY-S7M">
+                            <connections>
+                                <action selector="endBtnTapped" destination="6JP-Ej-cqj" id="WtG-1x-2Px"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="label" destination="7r8-Yu-c0E" id="yzI-BB-b51"/>

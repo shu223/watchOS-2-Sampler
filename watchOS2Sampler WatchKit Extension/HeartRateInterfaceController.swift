@@ -18,7 +18,7 @@ class HeartRateInterfaceController: WKInterfaceController {
     let healthStore = HKHealthStore()
     let heartRateType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)!
     let heartRateUnit = HKUnit(fromString: "count/min")
-    
+    var heartRateQuery: HKQuery?
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -52,10 +52,20 @@ class HeartRateInterfaceController: WKInterfaceController {
     // MARK: - Actions
     
     @IBAction func fetchBtnTapped() {
-        let query = self.createStreamingQuery()
-        self.healthStore.executeQuery(query)
+        guard self.heartRateQuery == nil else { return }
+        
+        self.heartRateQuery = self.createStreamingQuery()
+        self.healthStore.executeQuery(self.heartRateQuery!)
     }
     
+    @IBAction func endBtnTapped() {
+        guard self.heartRateQuery != nil else { return }
+        
+        self.healthStore.stopQuery(self.heartRateQuery!)
+        self.heartRateQuery = nil
+    }
+    
+    // =========================================================================
     // MARK: - Private
     
     private func createStreamingQuery() -> HKQuery {
