@@ -17,6 +17,7 @@ class HeartRateInterfaceController: WKInterfaceController {
     @IBOutlet weak var label: WKInterfaceLabel!
     let healthStore = HKHealthStore()
     let heartRateType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)!
+    let heartRateUnit = HKUnit(fromString: "count/min")
     
     
     override func awakeWithContext(context: AnyObject?) {
@@ -50,12 +51,29 @@ class HeartRateInterfaceController: WKInterfaceController {
     // =========================================================================
     // MARK: - Actions
     
-//    @IBAction func fetchBtnTapped() {
-//        
-//        let calendar = NSCalendar.currentCalendar()
-//        let now = NSDate()
-//        let components = calendar.components(.Day, fromDate: now)
-//        let startDate = calendar.dateFromComponents(components)!
-//        let endData   = calendar.dateByAddingUnit(, value: 1, toDate: startDate, options: 0)
-//    }
+    @IBAction func fetchBtnTapped() {
+        let query = self.createStreamingQuery()
+        self.healthStore.executeQuery(query)
+    }
+    
+    // MARK: - Private
+    
+    private func createStreamingQuery() -> HKQuery {
+        let predicate = HKQuery.predicateForSamplesWithStartDate(NSDate(), endDate: nil, options: .None)
+        
+        let query = HKAnchoredObjectQuery(type: heartRateType, predicate: predicate, anchor: nil, limit: Int(HKObjectQueryNoLimit)) { (query, samples, deletedObjects, anchor, error) -> Void in
+            self.addSamples(samples)
+        }
+        query.updateHandler = { (query, samples, deletedObjects, anchor, error) -> Void in
+            self.addSamples(samples)
+        }
+        
+        return query
+    }
+    
+    private func addSamples(samples: [HKSample]?) {
+        guard let samples = samples as? [HKQuantitySample] else { return }
+        guard let quantity = samples.last?.quantity else { return }
+        self.label.setText("\(quantity.doubleValueForUnit(heartRateUnit))")
+    }
 }
