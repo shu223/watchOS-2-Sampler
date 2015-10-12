@@ -8,7 +8,7 @@
 
 import UIKit
 import WatchConnectivity
-
+import HealthKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
@@ -54,6 +54,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func applicationShouldRequestHealthAuthorization(application: UIApplication) {
+        let healthStore = HKHealthStore()
+        guard HKHealthStore.isHealthDataAvailable() else {
+            return
+        }
+        
+        let dataTypes = Set([HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)!])
+        healthStore.requestAuthorizationToShareTypes(nil, readTypes: dataTypes, completion: { (result, error) -> Void in
+        })
+    }
     
     // =========================================================================
     // MARK: - WCSessionDelegate

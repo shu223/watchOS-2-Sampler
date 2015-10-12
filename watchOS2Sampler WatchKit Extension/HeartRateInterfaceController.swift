@@ -17,7 +17,8 @@ class HeartRateInterfaceController: WKInterfaceController {
     @IBOutlet weak var label: WKInterfaceLabel!
     let healthStore = HKHealthStore()
     let heartRateType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)!
-    
+    let heartRateUnit = HKUnit(fromString: "count/min")
+    var heartRateQuery: HKQuery?
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -26,17 +27,17 @@ class HeartRateInterfaceController: WKInterfaceController {
     override func willActivate() {
         super.willActivate()
         
-        if HKHealthStore.isHealthDataAvailable() != true {
-            self.label.setText("not availabel")
+        guard HKHealthStore.isHealthDataAvailable() else {
+            self.label.setText("not available")
             return
         }
         
-        let dataTypes = NSSet(object: heartRateType) as! Set<HKObjectType>
+        let dataTypes = Set([heartRateType])
         
         healthStore.requestAuthorizationToShareTypes(nil, readTypes: dataTypes) { (success, error) -> Void in
-            
-            if success != true {
+            guard success else {
                 self.label.setText("not allowed")
+                return
             }
         }
     }
@@ -50,12 +51,39 @@ class HeartRateInterfaceController: WKInterfaceController {
     // =========================================================================
     // MARK: - Actions
     
-//    @IBAction func fetchBtnTapped() {
-//        
-//        let calendar = NSCalendar.currentCalendar()
-//        let now = NSDate()
-//        let components = calendar.components(.Day, fromDate: now)
-//        let startDate = calendar.dateFromComponents(components)!
-//        let endData   = calendar.dateByAddingUnit(, value: 1, toDate: startDate, options: 0)
-//    }
+    @IBAction func fetchBtnTapped() {
+        guard self.heartRateQuery == nil else { return }
+        
+        self.heartRateQuery = self.createStreamingQuery()
+        self.healthStore.executeQuery(self.heartRateQuery!)
+    }
+    
+    @IBAction func endBtnTapped() {
+        guard self.heartRateQuery != nil else { return }
+        
+        self.healthStore.stopQuery(self.heartRateQuery!)
+        self.heartRateQuery = nil
+    }
+    
+    // =========================================================================
+    // MARK: - Private
+    
+    private func createStreamingQuery() -> HKQuery {
+        let predicate = HKQuery.predicateForSamplesWithStartDate(NSDate(), endDate: nil, options: .None)
+        
+        let query = HKAnchoredObjectQuery(type: heartRateType, predicate: predicate, anchor: nil, limit: Int(HKObjectQueryNoLimit)) { (query, samples, deletedObjects, anchor, error) -> Void in
+            self.addSamples(samples)
+        }
+        query.updateHandler = { (query, samples, deletedObjects, anchor, error) -> Void in
+            self.addSamples(samples)
+        }
+        
+        return query
+    }
+    
+    private func addSamples(samples: [HKSample]?) {
+        guard let samples = samples as? [HKQuantitySample] else { return }
+        guard let quantity = samples.last?.quantity else { return }
+        self.label.setText("\(quantity.doubleValueForUnit(heartRateUnit))")
+    }
 }
