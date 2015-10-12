@@ -2,8 +2,8 @@
 //  HeartRateInterfaceController.swift
 //  watchOS2Sampler
 //
-//  Created by Shuichi Tsutsumi on 2015/06/13.
-//  Copyright © 2015年 Shuichi Tsutsumi. All rights reserved.
+//  Created by Yusuke Kita (kitasuke) on 2015/10/11.
+//  Copyright © 2015 Yusuke Kita. All rights reserved.
 //
 
 import WatchKit
@@ -15,10 +15,12 @@ class HeartRateInterfaceController: WKInterfaceController {
 
     
     @IBOutlet weak var label: WKInterfaceLabel!
+    @IBOutlet weak var startBtn: WKInterfaceButton!
     let healthStore = HKHealthStore()
     let heartRateType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)!
     let heartRateUnit = HKUnit(fromString: "count/min")
     var heartRateQuery: HKQuery?
+    
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -53,17 +55,21 @@ class HeartRateInterfaceController: WKInterfaceController {
     
     @IBAction func fetchBtnTapped() {
         guard self.heartRateQuery == nil else { return }
-        
-        self.heartRateQuery = self.createStreamingQuery()
-        self.healthStore.executeQuery(self.heartRateQuery!)
+
+        if self.heartRateQuery == nil {
+            // start
+            self.heartRateQuery = self.createStreamingQuery()
+            self.healthStore.executeQuery(self.heartRateQuery!)
+            self.startBtn.setTitle("Stop")
+        }
+        else {
+            // stop
+            self.healthStore.stopQuery(self.heartRateQuery!)
+            self.heartRateQuery = nil
+            self.startBtn.setTitle("Start")
+        }
     }
     
-    @IBAction func endBtnTapped() {
-        guard self.heartRateQuery != nil else { return }
-        
-        self.healthStore.stopQuery(self.heartRateQuery!)
-        self.heartRateQuery = nil
-    }
     
     // =========================================================================
     // MARK: - Private

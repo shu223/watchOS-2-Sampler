@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="Symbol.ttf">
-            <string>Symbol</string>
-        </mutableArray>
-    </customFonts>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
@@ -150,16 +145,20 @@
             <objects>
                 <controller identifier="HeartRate" hidesWhenLoading="NO" id="6JP-Ej-cqj" customClass="HeartRateInterfaceController" customModule="watchOS2Sampler_WatchKit_Extension">
                     <items>
-                        <group width="1" alignment="left" id="Azb-ii-dhJ">
+                        <group width="1" alignment="left" layout="vertical" id="Azb-ii-dhJ">
                             <items>
                                 <imageView alignment="left" image="heart" id="90g-zg-DcI"/>
-                                <label alignment="left" text="---" minimumScaleFactor="0.20000000000000001" id="7r8-Yu-c0E">
-                                    <fontDescription key="font" name="Symbol" family="Symbol" pointSize="28"/>
-                                </label>
-                                <label alignment="left" text="BPM" id="wgq-1s-r9f">
-                                    <color key="textColor" red="0.8980392814" green="0.15686275059999999" blue="0.14509804549999999" alpha="1" colorSpace="deviceRGB"/>
-                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
-                                </label>
+                                <group width="1" alignment="left" id="Cak-EM-0o2">
+                                    <items>
+                                        <label alignment="left" text="---" textAlignment="left" minimumScaleFactor="0.29999999999999999" id="7r8-Yu-c0E">
+                                            <fontDescription key="font" type="system" pointSize="40"/>
+                                        </label>
+                                        <label alignment="left" text="BPM" id="wgq-1s-r9f">
+                                            <color key="textColor" red="0.8980392814" green="0.15686275059999999" blue="0.14509804549999999" alpha="1" colorSpace="deviceRGB"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                        </label>
+                                    </items>
+                                </group>
                             </items>
                         </group>
                         <button width="1" alignment="left" title="Start" id="iHG-Xc-3Ea">
@@ -167,14 +166,10 @@
                                 <action selector="fetchBtnTapped" destination="6JP-Ej-cqj" id="9MD-Fb-4X0"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="End" id="u3w-cY-S7M">
-                            <connections>
-                                <action selector="endBtnTapped" destination="6JP-Ej-cqj" id="WtG-1x-2Px"/>
-                            </connections>
-                        </button>
                     </items>
                     <connections>
                         <outlet property="label" destination="7r8-Yu-c0E" id="yzI-BB-b51"/>
+                        <outlet property="startBtn" destination="iHG-Xc-3Ea" id="LGy-hT-qze"/>
                     </connections>
                 </controller>
             </objects>

@@ -21,8 +21,8 @@ Code examples for new features of watchOS 2.
 ##How to build
 
 - Change the "Team" setting on [General] for each target.
-- Setup **HealthKit** for the WatchKit extension target.
-- Setup **App Groups** for the parent app and extension.
+- Enable **HealthKit** for the parent app and WatchKit extension target.
+- Enable **App Groups** for the Watch app and WatchKit extension target.
   - Edit "AudioRecAndPlayInterfaceController" with your group identifier.
 - Build & Run with **Xcode 7**
 
@@ -83,6 +83,13 @@ Draw paths with Core Graphics.
 Draw gradations with Core Graphics.
 
 <img src="ResourcesForREADME/gradation.png" width="136">
+
+
+###Heart Rate (Created by [kitasuke](https://github.com/kitasuke))
+
+Access to Heart Rate data using HealthKit.
+
+<img src="ResourcesForREADME/heartrate.png" width="136">
 
 
 ###Accelerometer
@@ -151,8 +158,6 @@ Get an image data from network using NSURLSession.
 
 ##Known Issues
 
-- Heart Rate
-  - Under development
 - Open System URL
   - Phone doesn't launch...
   - It's based on the Apple's document. 

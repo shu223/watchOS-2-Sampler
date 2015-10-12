@@ -13,6 +13,7 @@
 		8A2DF2731B2B85DE0025DDD7 /* CoordinatedAnimationsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2DF2721B2B85DE0025DDD7 /* CoordinatedAnimationsInterfaceController.swift */; };
 		8A2DF2751B2BA3430025DDD7 /* PickerStylesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2DF2741B2BA3430025DDD7 /* PickerStylesInterfaceController.swift */; };
 		8A2F0AC21B5509BD0064EBCF /* GradationInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2F0AC11B5509BD0064EBCF /* GradationInterfaceController.m */; };
+		8A30BF281BCBE3FA00A20ACC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A30BF271BCBE3FA00A20ACC /* HealthKit.framework */; };
 		8A3C17F91B2CB7FF00D75AB6 /* AccelerometerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C17F81B2CB7FF00D75AB6 /* AccelerometerInterfaceController.swift */; };
 		8A3C17FB1B2CB83F00D75AB6 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3C17FA1B2CB83F00D75AB6 /* CoreMotion.framework */; };
 		8A4D60C21B5444360050C06F /* DrawPathsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4D60C11B5444360050C06F /* DrawPathsInterfaceController.swift */; };
@@ -116,6 +117,7 @@
 		8A2DF2741B2BA3430025DDD7 /* PickerStylesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerStylesInterfaceController.swift; sourceTree = "<group>"; };
 		8A2F0AC01B5509BD0064EBCF /* GradationInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradationInterfaceController.h; sourceTree = "<group>"; };
 		8A2F0AC11B5509BD0064EBCF /* GradationInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradationInterfaceController.m; sourceTree = "<group>"; };
+		8A30BF271BCBE3FA00A20ACC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		8A3C17F81B2CB7FF00D75AB6 /* AccelerometerInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerometerInterfaceController.swift; sourceTree = "<group>"; };
 		8A3C17FA1B2CB83F00D75AB6 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		8A4D60C11B5444360050C06F /* DrawPathsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawPathsInterfaceController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A30BF281BCBE3FA00A20ACC /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +205,7 @@
 		8A1D5D9C1BB16A1D00F4F377 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8A30BF271BCBE3FA00A20ACC /* HealthKit.framework */,
 				8A50D6081B2CEDC600F4C7A2 /* HealthKit.framework */,
 				8A3C17FA1B2CB83F00D75AB6 /* CoreMotion.framework */,
 			);
@@ -261,13 +265,13 @@
 		8AA60E281B28E20300BE313B /* watchOS2Sampler */ = {
 			isa = PBXGroup;
 			children = (
+				8AA60E301B28E20300BE313B /* Assets.xcassets */,
+				8AA60E351B28E20300BE313B /* Info.plist */,
 				8A50D6041B2CED7100F4C7A2 /* watchOS2Sampler.entitlements */,
+				8AA60E2D1B28E20300BE313B /* Main.storyboard */,
+				8AA60E321B28E20300BE313B /* LaunchScreen.storyboard */,
 				8AA60E291B28E20300BE313B /* AppDelegate.swift */,
 				8AA60E2B1B28E20300BE313B /* ViewController.swift */,
-				8AA60E2D1B28E20300BE313B /* Main.storyboard */,
-				8AA60E301B28E20300BE313B /* Assets.xcassets */,
-				8AA60E321B28E20300BE313B /* LaunchScreen.storyboard */,
-				8AA60E351B28E20300BE313B /* Info.plist */,
 			);
 			path = watchOS2Sampler;
 			sourceTree = "<group>";
@@ -488,10 +492,10 @@
 						DevelopmentTeam = 9Z86A4AWDE;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.HealthKit = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -796,7 +800,7 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "watchOS2Sampler WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.sampler.watchos2.watchapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.sampler.wos2.watchapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -818,7 +822,7 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "watchOS2Sampler WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.sampler.watchos2.watchapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.sampler.wos2.watchapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -839,7 +843,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = watchOS2Sampler_WatchKit_Extension;
 				INFOPLIST_FILE = "watchOS2Sampler WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.sampler.watchos2.watchapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.sampler.wos2.watchapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -859,7 +863,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = watchOS2Sampler_WatchKit_Extension;
 				INFOPLIST_FILE = "watchOS2Sampler WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.sampler.watchos2.watchapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.sampler.wos2.watchapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -878,7 +882,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = watchOS2Sampler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.sampler.watchos2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.sampler.wos2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -893,7 +897,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = watchOS2Sampler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.sampler.watchos2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.sampler.wos2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -905,7 +909,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = watchOS2SamplerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.sampler.watchos2.Tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.sampler.wos2.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/watchOS2Sampler.app/watchOS2Sampler";
 			};
@@ -917,7 +921,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = watchOS2SamplerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.sampler.watchos2.Tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.sampler.wos2.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/watchOS2Sampler.app/watchOS2Sampler";
 			};
@@ -928,7 +932,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = watchOS2SamplerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shu223..sampler.watchos2.UITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shu223..sampler.wos2.UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = watchOS2Sampler;
 				USES_XCTRUNNER = YES;
@@ -940,7 +944,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = watchOS2SamplerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shu223..sampler.watchos2.UITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shu223..sampler.wos2.UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = watchOS2Sampler;
 				USES_XCTRUNNER = YES;

@@ -67,6 +67,11 @@ class InterfaceController: WKInterfaceController {
                 kItemKeyClassPrefix: "Gradation",
             ],
             [
+                kItemKeyTitle: "Heart Rate",
+                kItemKeyDetail: "Access to Heart Rate data using HealthKit.",
+                kItemKeyClassPrefix: "HeartRate",
+            ],
+            [
                 kItemKeyTitle: "Accelerometer",
                 kItemKeyDetail: "Access to Accelerometer data using CoreMotion.",
                 kItemKeyClassPrefix: "Accelerometer"
@@ -85,11 +90,6 @@ class InterfaceController: WKInterfaceController {
                 kItemKeyTitle: "Pedometer",
                 kItemKeyDetail: "Counting steps demo using CMPedometer.",
                 kItemKeyClassPrefix: "Pedometer",
-            ],
-            [
-                kItemKeyTitle: "Heart Rate",
-                kItemKeyDetail: "Access to Heart Rate data using HealthKit.",
-                kItemKeyClassPrefix: "HeartRate",
             ],
             [
                 kItemKeyTitle: "Alert",
