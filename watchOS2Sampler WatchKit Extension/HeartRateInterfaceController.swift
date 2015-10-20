@@ -54,8 +54,6 @@ class HeartRateInterfaceController: WKInterfaceController {
     // MARK: - Actions
     
     @IBAction func fetchBtnTapped() {
-        guard self.heartRateQuery == nil else { return }
-
         if self.heartRateQuery == nil {
             // start
             self.heartRateQuery = self.createStreamingQuery()
