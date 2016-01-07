@@ -116,6 +116,11 @@ class InterfaceController: WKInterfaceController {
                 kItemKeyDetail: "Get an image data from network using NSURLSession.",
                 kItemKeyClassPrefix: "NSURLSession",
             ],
+            [
+                kItemKeyTitle: "FPS Test",
+                kItemKeyDetail: "Animation FPS Test",
+                kItemKeyClassPrefix: "FPSTrial",
+            ],
         ]
     }
 

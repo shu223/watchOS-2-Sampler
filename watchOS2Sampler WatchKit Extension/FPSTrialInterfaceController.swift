@@ -1,0 +1,75 @@
+//
+//  FPSTrialInterfaceController.swift
+//  watchOS2Sampler
+//
+//  Created by Shuichi Tsutsumi on 1/7/16.
+//  Copyright © 2016 Shuichi Tsutsumi. All rights reserved.
+//
+
+import WatchKit
+import Foundation
+
+
+class FPSTrialInterfaceController: WKInterfaceController {
+
+    
+    @IBOutlet weak var image: WKInterfaceImage!
+    
+    
+    override func awakeWithContext(context: AnyObject?) {
+        super.awakeWithContext(context)
+        print("awakeWithContext")
+    }
+
+    override func willActivate() {
+        // This method is called when watch view controller is about to be visible to user
+        super.willActivate()
+        
+        btn3Tapped()
+    }
+
+    override func didDeactivate() {
+        // This method is called when watch view controller is no longer visible
+        super.didDeactivate()
+        
+        image.stopAnimating()
+    }
+    
+    
+    private func startAnimating(fps: Int) {
+        
+        image.stopAnimating()
+        
+        var images: [UIImage] = []
+
+        for var i=1; i<=fps; i++ {
+            let index = 36 * i / fps
+            let fileName = String(format: "progress-%d", index);
+            let image = UIImage(named: fileName)
+            images.append(image!)
+        }
+
+        let animatedImage = UIImage.animatedImageWithImages(
+            images,
+            duration: 1.0)
+        
+        image.setImage(animatedImage)
+        image.startAnimating()
+    }
+
+    
+    // =========================================================================
+    // MARK: - Actions
+    
+    @IBAction func btn1Tapped() {
+        startAnimating(36)
+    }
+
+    @IBAction func btn2Tapped() {
+        startAnimating(24)
+    }
+
+    @IBAction func btn3Tapped() {
+        startAnimating(12)
+    }
+}

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -291,6 +291,46 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="631" y="576"/>
+        </scene>
+        <!--Swipe-->
+        <scene sceneID="qQJ-cG-MZg">
+            <objects>
+                <controller identifier="Swipe" id="SMG-3x-gWk" customClass="SwipeInterfaceController" customModule="watchOS2Sampler_WatchKit_Extension"/>
+            </objects>
+            <point key="canvasLocation" x="466" y="796"/>
+        </scene>
+        <!--FPSTrial-->
+        <scene sceneID="jVQ-eR-LD2">
+            <objects>
+                <controller identifier="FPSTrial" id="aeU-H4-yGH" customClass="FPSTrialInterfaceController" customModule="watchOS2Sampler_WatchKit_Extension">
+                    <items>
+                        <imageView alignment="center" contentMode="center" initiallyAnimated="NO" animationDuration="1" id="vxy-0y-qUd"/>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="axS-by-hou">
+                            <items>
+                                <button width="0.33000000000000002" alignment="left" title="36" id="5jD-5x-s3N">
+                                    <connections>
+                                        <action selector="btn1Tapped" destination="aeU-H4-yGH" id="Snp-4H-Uvr"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" alignment="left" title="24" id="jvx-8H-a8r">
+                                    <connections>
+                                        <action selector="btn2Tapped" destination="aeU-H4-yGH" id="wxI-58-ZdE"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" alignment="left" title="12" id="mgx-hJ-3DT">
+                                    <connections>
+                                        <action selector="btn3Tapped" destination="aeU-H4-yGH" id="yWG-fE-qwl"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="image" destination="vxy-0y-qUd" id="i9R-3z-rXp"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="631" y="796"/>
         </scene>
         <!--PickerStyles-->
         <scene sceneID="8az-8q-aQ7">
