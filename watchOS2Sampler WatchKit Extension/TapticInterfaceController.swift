@@ -3,7 +3,7 @@
 //  watchOS2Sampler
 //
 //  Created by Shuichi Tsutsumi on 2015/06/11.
-//  Copyright © 2015年 Shuichi Tsutsumi. All rights reserved.
+//  Copyright © 2015 Shuichi Tsutsumi. All rights reserved.
 //
 
 import WatchKit
@@ -45,7 +45,6 @@ class TapticInterfaceController: WKInterfaceController {
         currentItem = pickerItems.first
         
         /*
-        // Configure interface objects here.
         WKPickerItem *pickerItem1 = [WKPickerItem alloc];
         [pickerItem1 setTitle:@"First item"];
         [pickerItem1 setAccessoryImage:[WKImage imageWithImageName:@"Smile"]];
@@ -64,15 +63,17 @@ class TapticInterfaceController: WKInterfaceController {
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
     }
 
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
 
+    
+    // =========================================================================
+    // MARK: - Actions
+    
     @IBAction func pickerItemSelected(index: Int) {
         
         currentItem = pickerItems[index]

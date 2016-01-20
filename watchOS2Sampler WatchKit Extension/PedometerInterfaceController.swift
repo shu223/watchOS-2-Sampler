@@ -3,7 +3,7 @@
 //  watchOS2Sampler
 //
 //  Created by Shuichi Tsutsumi on 2015/06/13.
-//  Copyright © 2015年 Shuichi Tsutsumi. All rights reserved.
+//  Copyright © 2015 Shuichi Tsutsumi. All rights reserved.
 //
 
 import WatchKit
@@ -23,31 +23,30 @@ class PedometerInterfaceController: WKInterfaceController {
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
-        // Configure interface objects here.
     }
 
     override func willActivate() {
         super.willActivate()
         
-        if (CMPedometer.isPaceAvailable() == true) {
+        if CMPedometer.isPaceAvailable() {
             
             pedometer.startPedometerUpdatesFromDate(NSDate()) { (pedometerData, error) -> Void in
                 
-                if pedometerData != nil {
-                    let steps: UInt = pedometerData!.numberOfSteps.unsignedLongValue
+                if let pedometerData = pedometerData {
+                    
+                    let steps = pedometerData.numberOfSteps.unsignedLongValue
                     self.labelSteps.setText(String(format: "%lu", steps))
-                    if pedometerData!.distance != nil {
-                        let distance: UInt = pedometerData!.distance!.unsignedLongValue
-                        self.labelDistance.setText(String(format: "%lu", distance))
+                    
+                    if let distance = pedometerData.distance {
+                        self.labelDistance.setText(String(format: "%lu", distance.unsignedLongValue))
                     }
-                    if pedometerData!.floorsAscended != nil {
-                        let ascended: UInt = pedometerData!.floorsAscended!.unsignedLongValue
-                        self.labelAscended.setText(String(format: "%lu", ascended))
+                    
+                    if let floorsAscended = pedometerData.floorsAscended {
+                        self.labelAscended.setText(String(format: "%lu", floorsAscended.unsignedLongValue))
                     }
-                    if pedometerData!.floorsDescended != nil {
-                        let descended: UInt = pedometerData!.floorsDescended!.unsignedLongValue
-                        self.labelDescended.setText(String(format: "%lu", descended))
+                    
+                    if let floorsDescended = pedometerData.floorsDescended {
+                        self.labelDescended.setText(String(format: "%lu", floorsDescended.unsignedLongValue))
                     }
                 }
             }

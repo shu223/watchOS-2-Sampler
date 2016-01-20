@@ -3,7 +3,7 @@
 //  watchOS2Sampler
 //
 //  Created by Shuichi Tsutsumi on 2015/06/10.
-//  Copyright © 2015年 Shuichi Tsutsumi. All rights reserved.
+//  Copyright © 2015 Shuichi Tsutsumi. All rights reserved.
 //
 
 import UIKit
@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
             categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
 
-        if (WCSession.isSupported()) {
+        if WCSession.isSupported() {
             let session = WCSession.defaultSession()
             session.delegate = self // conforms to WCSessionDelegate
             session.activateSession()

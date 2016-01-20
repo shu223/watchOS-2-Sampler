@@ -3,7 +3,7 @@
 //  watchOS2Sampler
 //
 //  Created by Shuichi Tsutsumi on 2015/06/10.
-//  Copyright © 2015年 Shuichi Tsutsumi. All rights reserved.
+//  Copyright © 2015 Shuichi Tsutsumi. All rights reserved.
 //
 
 import WatchKit
@@ -27,17 +27,13 @@ class AudioFilePlayerInterfaceController: WKInterfaceController {
         let asset = WKAudioFileAsset(URL: fileUrl)
         let playerItem = WKAudioFilePlayerItem(asset: asset)
         player = WKAudioFilePlayer(playerItem: playerItem)
-        
-//        playBtn.setEnabled(false)
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
     }
 
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
 

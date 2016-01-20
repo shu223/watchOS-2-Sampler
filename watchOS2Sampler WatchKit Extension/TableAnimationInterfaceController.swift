@@ -3,7 +3,7 @@
 //  watchOS2Sampler
 //
 //  Created by Shuichi Tsutsumi on 2015/06/13.
-//  Copyright © 2015年 Shuichi Tsutsumi. All rights reserved.
+//  Copyright © 2015 Shuichi Tsutsumi. All rights reserved.
 //
 
 import WatchKit
@@ -29,7 +29,6 @@ class TableAnimationInterfaceController: WKInterfaceController {
     }
 
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
 

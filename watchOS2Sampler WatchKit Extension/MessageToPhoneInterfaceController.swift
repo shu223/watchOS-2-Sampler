@@ -3,7 +3,7 @@
 //  watchOS2Sampler
 //
 //  Created by Shuichi Tsutsumi on 2015/06/16.
-//  Copyright © 2015年 Shuichi Tsutsumi. All rights reserved.
+//  Copyright © 2015 Shuichi Tsutsumi. All rights reserved.
 //
 
 import WatchKit
@@ -16,7 +16,7 @@ class MessageToPhoneInterfaceController: WKInterfaceController, WCSessionDelegat
         super.awakeWithContext(context)
         
         // Activate the session on both sides to enable communication.
-        if (WCSession.isSupported()) {
+        if WCSession.isSupported() {
             let session = WCSession.defaultSession()
             session.delegate = self // conforms to WCSessionDelegate
             session.activateSession()
@@ -24,12 +24,10 @@ class MessageToPhoneInterfaceController: WKInterfaceController, WCSessionDelegat
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
     }
 
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
 

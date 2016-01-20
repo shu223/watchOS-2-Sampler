@@ -3,7 +3,7 @@
 //  watchOS2SamplerTests
 //
 //  Created by Shuichi Tsutsumi on 2015/06/10.
-//  Copyright © 2015年 Shuichi Tsutsumi. All rights reserved.
+//  Copyright © 2015 Shuichi Tsutsumi. All rights reserved.
 //
 
 import XCTest

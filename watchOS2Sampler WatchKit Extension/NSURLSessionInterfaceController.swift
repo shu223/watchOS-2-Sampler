@@ -3,7 +3,7 @@
 //  watchOS2Sampler
 //
 //  Created by organlounge on 2015/06/17.
-//  Copyright © 2015年 Shuichi Tsutsumi. All rights reserved.
+//  Copyright © 2015 Shuichi Tsutsumi. All rights reserved.
 //
 
 import WatchKit

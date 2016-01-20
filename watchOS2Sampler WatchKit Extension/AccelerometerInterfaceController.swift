@@ -3,7 +3,7 @@
 //  watchOS2Sampler
 //
 //  Created by Shuichi Tsutsumi on 2015/06/13.
-//  Copyright © 2015年 Shuichi Tsutsumi. All rights reserved.
+//  Copyright © 2015 Shuichi Tsutsumi. All rights reserved.
 //
 
 import WatchKit
@@ -17,6 +17,7 @@ class AccelerometerInterfaceController: WKInterfaceController {
     @IBOutlet weak var labelX: WKInterfaceLabel!
     @IBOutlet weak var labelY: WKInterfaceLabel!
     @IBOutlet weak var labelZ: WKInterfaceLabel!
+    
     let motionManager = CMMotionManager()
     
     
@@ -29,7 +30,7 @@ class AccelerometerInterfaceController: WKInterfaceController {
     override func willActivate() {
         super.willActivate()
 
-        if (motionManager.accelerometerAvailable == true) {
+        if motionManager.accelerometerAvailable {
             let handler:CMAccelerometerHandler = {(data: CMAccelerometerData?, error: NSError?) -> Void in
                 self.labelX.setText(String(format: "%.2f", data!.acceleration.x))
                 self.labelY.setText(String(format: "%.2f", data!.acceleration.y))

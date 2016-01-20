@@ -3,7 +3,7 @@
 //  watchOS2Sampler
 //
 //  Created by Shuichi Tsutsumi on 2015/07/14.
-//  Copyright © 2015年 Shuichi Tsutsumi. All rights reserved.
+//  Copyright © 2015 Shuichi Tsutsumi. All rights reserved.
 //
 
 #import "GradationInterfaceController.h"
@@ -19,19 +19,16 @@
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
-    
-    // Configure interface objects here.
 }
 
 - (void)willActivate {
-    // This method is called when watch view controller is about to be visible to user
     [super willActivate];
 }
 
 - (void)didDeactivate {
-    // This method is called when watch view controller is no longer visible
     [super didDeactivate];
 }
+
 
 // =============================================================================
 #pragma mark - Actions

@@ -3,7 +3,7 @@
 //  watchOS2Sampler
 //
 //  Created by Shuichi Tsutsumi on 2015/06/13.
-//  Copyright © 2015年 Shuichi Tsutsumi. All rights reserved.
+//  Copyright © 2015 Shuichi Tsutsumi. All rights reserved.
 //
 
 import WatchKit
@@ -17,6 +17,7 @@ class GyroscopeInterfaceController: WKInterfaceController {
     @IBOutlet weak var labelX: WKInterfaceLabel!
     @IBOutlet weak var labelY: WKInterfaceLabel!
     @IBOutlet weak var labelZ: WKInterfaceLabel!
+    
     let motionManager = CMMotionManager()
 
     
@@ -35,7 +36,7 @@ class GyroscopeInterfaceController: WKInterfaceController {
             self.labelZ.setText(String(format: "%.2f", data!.rotationRate.z))
         }
         
-        if (motionManager.gyroAvailable == true) {
+        if motionManager.gyroAvailable {
             motionManager.startGyroUpdatesToQueue(NSOperationQueue.currentQueue()!, withHandler: handler)
         }
         else {
