@@ -33,14 +33,17 @@ class AudioRecAndPlayInterfaceController: WKInterfaceController {
     // =========================================================================
     // MARK: - Private
 
-    func recFileURL() -> NSURL {
+    func recFileURL() -> NSURL? {
         
         // Must use a shared container
         let fileManager = NSFileManager.defaultManager()
         let container = fileManager.containerURLForSecurityApplicationGroupIdentifier("group.com.shu223.watchos2sampler") // replace with your own identifier!!!!
-        let audioFileURL = container!.URLByAppendingPathComponent("rec.mp4")
-        
-        return audioFileURL
+        if let container = container {
+            return container.URLByAppendingPathComponent("rec.mp4")
+        }
+        else {
+            return nil
+        }
     }
     
     
@@ -49,24 +52,30 @@ class AudioRecAndPlayInterfaceController: WKInterfaceController {
     
     @IBAction func recBtnTapped() {
 
-        self.presentAudioRecorderControllerWithOutputURL(
-            self.recFileURL(),
-            preset: WKAudioRecorderPreset.HighQualityAudio,
-            options: nil,
-            completion:
-            { (didSave, error) -> Void in
-                print("error:\(error)\n")
-                self.recLabel.setText("didSave:\(didSave), error:\(error)")
+        if let recFileUrl = recFileURL() {
+            
+            presentAudioRecorderControllerWithOutputURL(
+                recFileUrl,
+                preset: WKAudioRecorderPreset.HighQualityAudio,
+                options: nil,
+                completion:
+                { (didSave, error) -> Void in
+                    print("error:\(error)\n")
+                    self.recLabel.setText("didSave:\(didSave), error:\(error)")
             })
+        }
     }
     
     @IBAction func playBtnTapped() {
         
-        self.presentMediaPlayerControllerWithURL(
-            self.recFileURL(),
-            options: nil) { (didPlayToEnd, endTime, error) -> Void in
-                
-                self.playLabel.setText("didPlayToEnd:\(didPlayToEnd), endTime:\(endTime), error:\(error)")
+        if let recFileUrl = recFileURL() {
+            
+            presentMediaPlayerControllerWithURL(
+                recFileUrl,
+                options: nil) { (didPlayToEnd, endTime, error) -> Void in
+                    
+                    self.playLabel.setText("didPlayToEnd:\(didPlayToEnd), endTime:\(endTime), error:\(error)")
+            }
         }
     }
 }

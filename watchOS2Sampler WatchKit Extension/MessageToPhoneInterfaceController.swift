@@ -52,7 +52,7 @@ class MessageToPhoneInterfaceController: WKInterfaceController, WCSessionDelegat
         }
         let actions = [defaultAction]
             
-        self.presentAlertControllerWithTitle(
+        presentAlertControllerWithTitle(
             "Message Received",
             message: "",
             preferredStyle: WKAlertControllerStyle.Alert,

@@ -43,23 +43,6 @@ class TapticInterfaceController: WKInterfaceController {
         picker.setItems(pickerItems)
         
         currentItem = pickerItems.first
-        
-        /*
-        WKPickerItem *pickerItem1 = [WKPickerItem alloc];
-        [pickerItem1 setTitle:@"First item"];
-        [pickerItem1 setAccessoryImage:[WKImage imageWithImageName:@"Smile"]];
-        
-        WKPickerItem *pickerItem2 = [WKPickerItem alloc];
-        [pickerItem2 setTitle:@"Second item"];
-        [pickerItem2 setAccessoryImage:[WKImage imageWithImageName:@"Smile"]];
-        
-        WKPickerItem *pickerItem3 = [WKPickerItem alloc];
-        [pickerItem3 setTitle:@"Third item"];
-        [pickerItem3 setAccessoryImage:[WKImage imageWithImageName:@"Smile"]];
-        
-        self.pickerItems = [[NSArray alloc] initWithObjects:pickerItem1, pickerItem2, pickerItem3, nil];
-        [self.picker setItems:self.pickerItems];
-        */
     }
 
     override func willActivate() {

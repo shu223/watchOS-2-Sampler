@@ -34,7 +34,7 @@ class AnimatedPropertiesInterfaceController: WKInterfaceController {
     
     @IBAction func scaleBtnTapped() {
         
-        self.animateWithDuration(0.5) { () -> Void in
+        animateWithDuration(0.5) { () -> Void in
             self.image.setWidth(100)
             self.image.setHeight(160)
         }
@@ -50,7 +50,7 @@ class AnimatedPropertiesInterfaceController: WKInterfaceController {
 
     @IBAction func fadeBtnTapped() {
         
-        self.animateWithDuration(0.5) { () -> Void in
+        animateWithDuration(0.5) { () -> Void in
             self.image.setAlpha(0.0)
         }
         
@@ -64,7 +64,7 @@ class AnimatedPropertiesInterfaceController: WKInterfaceController {
 
     @IBAction func moveBtnTapped() {
         
-        self.animateWithDuration(0.5) { () -> Void in
+        animateWithDuration(0.5) { () -> Void in
             self.image.setHorizontalAlignment(WKInterfaceObjectHorizontalAlignment.Right)
         }
         

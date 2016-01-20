@@ -25,7 +25,7 @@ class TableAnimationInterfaceController: WKInterfaceController {
         super.willActivate()
 
         table.setNumberOfRows(numberOfRows, withRowType: "Cell")
-        self.loadTableData()
+        loadTableData()
     }
 
     override func didDeactivate() {
@@ -48,7 +48,7 @@ class TableAnimationInterfaceController: WKInterfaceController {
         
         table.insertRowsAtIndexes(NSIndexSet(index: 0), withRowType: "Cell")
         numberOfRows++
-        self.loadTableData()
+        loadTableData()
     }
 
     @IBAction func removeBtnTapped() {
@@ -59,6 +59,6 @@ class TableAnimationInterfaceController: WKInterfaceController {
         
         table.removeRowsAtIndexes(NSIndexSet(index: 0))
         numberOfRows--
-        self.loadTableData()
+        loadTableData()
     }
 }

@@ -30,7 +30,7 @@ class HeartRateInterfaceController: WKInterfaceController {
         super.willActivate()
         
         guard HKHealthStore.isHealthDataAvailable() else {
-            self.label.setText("not available")
+            label.setText("not available")
             return
         }
         
@@ -53,19 +53,19 @@ class HeartRateInterfaceController: WKInterfaceController {
     // MARK: - Actions
     
     @IBAction func fetchBtnTapped() {
-        guard self.heartRateQuery == nil else { return }
+        guard heartRateQuery == nil else { return }
 
-        if self.heartRateQuery == nil {
+        if heartRateQuery == nil {
             // start
-            self.heartRateQuery = self.createStreamingQuery()
-            self.healthStore.executeQuery(self.heartRateQuery!)
-            self.startBtn.setTitle("Stop")
+            heartRateQuery = self.createStreamingQuery()
+            healthStore.executeQuery(self.heartRateQuery!)
+            startBtn.setTitle("Stop")
         }
         else {
             // stop
-            self.healthStore.stopQuery(self.heartRateQuery!)
-            self.heartRateQuery = nil
-            self.startBtn.setTitle("Start")
+            healthStore.stopQuery(self.heartRateQuery!)
+            heartRateQuery = nil
+            startBtn.setTitle("Start")
         }
     }
     
@@ -89,6 +89,6 @@ class HeartRateInterfaceController: WKInterfaceController {
     private func addSamples(samples: [HKSample]?) {
         guard let samples = samples as? [HKQuantitySample] else { return }
         guard let quantity = samples.last?.quantity else { return }
-        self.label.setText("\(quantity.doubleValueForUnit(heartRateUnit))")
+        label.setText("\(quantity.doubleValueForUnit(heartRateUnit))")
     }
 }

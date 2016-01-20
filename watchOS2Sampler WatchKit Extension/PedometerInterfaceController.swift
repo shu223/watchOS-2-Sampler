@@ -53,10 +53,10 @@ class PedometerInterfaceController: WKInterfaceController {
         }
         else {
             
-            self.labelSteps.setText("not available")
-            self.labelDistance.setText("not available")
-            self.labelAscended.setText("not available")
-            self.labelDescended.setText("not available")
+            labelSteps.setText("not available")
+            labelDistance.setText("not available")
+            labelAscended.setText("not available")
+            labelDescended.setText("not available")
         }
     }
 

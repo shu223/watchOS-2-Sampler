@@ -128,7 +128,7 @@ class InterfaceController: WKInterfaceController {
         super.willActivate()
         print("willActivate")
         
-        self.loadTableData()
+        loadTableData()
     }
 
     override func didDeactivate() {
@@ -161,6 +161,6 @@ class InterfaceController: WKInterfaceController {
         let item = items[rowIndex]
         let title = item[kItemKeyClassPrefix]
         
-        self.pushControllerWithName(title!, context: nil)
+        pushControllerWithName(title!, context: nil)
     }
 }

@@ -56,7 +56,7 @@ class AlertInterfaceController: WKInterfaceController {
             actions.append(cancelAction)
         }
         
-        self.presentAlertControllerWithTitle(
+        presentAlertControllerWithTitle(
             "SomeTitle",
             message: "SomeMessage",
             preferredStyle: style,
@@ -69,16 +69,16 @@ class AlertInterfaceController: WKInterfaceController {
     
     @IBAction func alertBtnTapped() {
 
-        self.showAlertControllerWithStyle(WKAlertControllerStyle.Alert)
+        showAlertControllerWithStyle(WKAlertControllerStyle.Alert)
     }
 
     @IBAction func sidebysideBtnTapped() {
         
-        self.showAlertControllerWithStyle(WKAlertControllerStyle.SideBySideButtonsAlert)
+        showAlertControllerWithStyle(WKAlertControllerStyle.SideBySideButtonsAlert)
     }
 
     @IBAction func actionSheetBtnTapped() {
         
-        self.showAlertControllerWithStyle(WKAlertControllerStyle.ActionSheet)
+        showAlertControllerWithStyle(WKAlertControllerStyle.ActionSheet)
     }
 }

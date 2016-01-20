@@ -35,9 +35,9 @@ class DeviceMotionInterfaceController: WKInterfaceController {
             motionManager.startDeviceMotionUpdatesToQueue(NSOperationQueue.currentQueue()!, withHandler: handler)
         }
         else {
-            self.labelX.setText("not available")
-            self.labelY.setText("not available")
-            self.labelZ.setText("not available")
+            labelX.setText("not available")
+            labelY.setText("not available")
+            labelZ.setText("not available")
         }
     }
 

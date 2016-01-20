@@ -22,13 +22,13 @@ class NSURLSessionInterfaceController: WKInterfaceController {
     
     override func willActivate() {
         super.willActivate()
-        self.isActive = true
+        isActive = true
     }
     
     override func didDeactivate() {
         super.didDeactivate()
-        self.isActive = false
-        if let t = self.task {
+        isActive = false
+        if let t = task {
             if t.state == NSURLSessionTaskState.Running {
                 t.cancel()
             }
@@ -39,7 +39,7 @@ class NSURLSessionInterfaceController: WKInterfaceController {
         let url = NSURL(string:"https://pbs.twimg.com/profile_images/3186881240/fa714ece16d0fabccf903cec863b1949_400x400.png")!
         let conf = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: conf)
-        self.task = session.dataTaskWithURL(url) { (data, res, error) -> Void in
+        task = session.dataTaskWithURL(url) { (data, res, error) -> Void in
             if let e = error {
                 print("dataTaskWithURL fail: \(e.debugDescription)")
                 return

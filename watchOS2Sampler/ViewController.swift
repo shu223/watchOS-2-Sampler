@@ -38,7 +38,7 @@ class ViewController: UIViewController {
                 style: UIAlertActionStyle.Cancel,
                 handler: nil)
             alert.addAction(okAction)
-            self.presentViewController(alert, animated: true, completion: nil)
+            presentViewController(alert, animated: true, completion: nil)
             
             return
         }

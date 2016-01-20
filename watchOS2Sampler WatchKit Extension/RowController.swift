@@ -16,7 +16,7 @@ class RowController: NSObject {
     
     func showItem(title: String, detail: String) {
         
-        self.textLabel.setText(title)
-        self.detailLabel.setText(detail)
+        textLabel.setText(title)
+        detailLabel.setText(detail)
     }
 }
