@@ -22,7 +22,7 @@ class PickerStylesInterfaceController: WKInterfaceController {
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        for (var i=1; i<=10; i++) {
+        for i in 1...10 {
             let pickerItem = WKPickerItem()
             
             let imageName = "m\(i)"

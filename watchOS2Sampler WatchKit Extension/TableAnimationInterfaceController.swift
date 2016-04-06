@@ -34,7 +34,7 @@ class TableAnimationInterfaceController: WKInterfaceController {
 
     private func loadTableData() {
         
-        for (var i=0; i<numberOfRows; i++) {
+        for i in 0 ..< numberOfRows {
             let row = table.rowControllerAtIndex(i) as! RowController
             row.showItem("\(i)", detail: "")
         }
@@ -47,7 +47,7 @@ class TableAnimationInterfaceController: WKInterfaceController {
     @IBAction func insertBtnTapped() {
         
         table.insertRowsAtIndexes(NSIndexSet(index: 0), withRowType: "Cell")
-        numberOfRows++
+        numberOfRows += 1
         loadTableData()
     }
 
@@ -58,7 +58,7 @@ class TableAnimationInterfaceController: WKInterfaceController {
         }
         
         table.removeRowsAtIndexes(NSIndexSet(index: 0))
-        numberOfRows--
+        numberOfRows -= 1
         loadTableData()
     }
 }

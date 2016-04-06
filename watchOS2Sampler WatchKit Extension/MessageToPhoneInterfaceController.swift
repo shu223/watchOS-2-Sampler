@@ -36,14 +36,14 @@ class MessageToPhoneInterfaceController: WKInterfaceController, WCSessionDelegat
     // MARK: - WCSessionDelegate
     
     func sessionWatchStateDidChange(session: WCSession) {
-        print(__FUNCTION__)
+        print(#function)
         print(session)
         print("reachable:\(session.reachable)")
     }
 
     // Received message from iPhone
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
-        print(__FUNCTION__)
+        print(#function)
         guard message["request"] as? String == "showAlert" else {return}
 
         let defaultAction = WKAlertAction(

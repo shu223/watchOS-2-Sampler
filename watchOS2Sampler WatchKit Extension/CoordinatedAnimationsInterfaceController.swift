@@ -23,7 +23,7 @@ class CoordinatedAnimationsInterfaceController: WKInterfaceController {
         // create animated images and picker items
         var images: [UIImage]! = []
         var pickerItems: [WKPickerItem]! = []
-        for (var i=0; i<=36; i++) {
+        for i in 0...36 {
             let name = "progress-\(i)"
             images.append(UIImage(named: name)!)
 

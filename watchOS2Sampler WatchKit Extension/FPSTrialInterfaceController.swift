@@ -40,7 +40,7 @@ class FPSTrialInterfaceController: WKInterfaceController {
         
         var images: [UIImage] = []
 
-        for var i=1; i<=fps; i++ {
+        for i in 1...fps {
             let index = 36 * i / fps
             let fileName = String(format: "progress-%d", index);
             let image = UIImage(named: fileName)

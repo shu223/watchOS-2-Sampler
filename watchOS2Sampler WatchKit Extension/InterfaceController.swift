@@ -147,7 +147,7 @@ class InterfaceController: WKInterfaceController {
         for anItem in items {
             let row = table.rowControllerAtIndex(i) as! RowController
             row.showItem(anItem[kItemKeyTitle]!, detail: anItem[kItemKeyDetail]!)
-            i++
+            i += 1
         }
     }
     
