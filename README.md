@@ -1,11 +1,10 @@
 # watchOS-2-Sampler
 
-[![Platform](http://img.shields.io/badge/platform-ios-blue.svg?style=flat
-)](https://developer.apple.com/iphone/index.action)
 [![Language](http://img.shields.io/badge/language-swift-brightgreen.svg?style=flat
 )](https://developer.apple.com/swift)
 [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat
 )](http://mit-license.org)
+[![Twitter](https://img.shields.io/badge/twitter-@shu223-blue.svg?style=flat)](http://twitter.com/shu223)
 
 Code examples for new features of watchOS 2.
 
@@ -175,12 +174,15 @@ You can check the **examples for iOS 9** new features on [iOS-9-Sampler](https:/
 
 ##Author
 
-**Shuichi Tsutsumi** (Freelance iOS engineer)
+**Shuichi Tsutsumi**
 
-- [Twitter](https://twitter.com/shu223)
-- [Facebook](https://www.facebook.com/shuichi.tsutsumi)
-- [LinkedIn](https://www.linkedin.com/profile/view?id=214896557)
-- [Blog (Japanese)](http://d.hatena.ne.jp/shu223/)
+iOS freelancer in Japan. Welcome works from abroad!
+
+- PAST WORKS:  [My Profile Summary](https://medium.com/@shu223/my-profile-summary-f14bfc1e7099#.vdh0i7clr)
+- PROFILES: [LinkedIn](https://www.linkedin.com/profile/view?id=214896557)
+- BLOGS: [English](https://medium.com/@shu223/) / [Japanese](http://d.hatena.ne.jp/shu223/)
+- CONTACTS: [Twitter](https://twitter.com/shu223) / [Facebook](https://www.facebook.com/shuichi.tsutsumi)
+
 
 
 ##Special Thanks
