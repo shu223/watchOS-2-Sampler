@@ -11,13 +11,13 @@ Code examples for new features of watchOS 2.
 
 <img src="ResourcesForREADME/watchos2sampler.jpg" width="242">
 
-##Requirements
+## Requirements
 
 - Xcode 7
 - iOS 9 and watchOS 2
 
 
-##How to build
+## How to build
 
 - Change the "Team" setting on [General] for each target.
 - Enable **HealthKit** for the parent app and WatchKit extension target.
@@ -26,78 +26,78 @@ Code examples for new features of watchOS 2.
 - Build & Run with **Xcode 7**
 
 
-##Contents
+## Contents
 
-###Animated Properties
+### Animated Properties
 
 Animate width/height, alpha and alignments.
 
 ![](ResourcesForREADME/animation.gif)
 
 
-###Table Animations
+### Table Animations
 
 Insert and remove animations for WKInterfaceTable.
 
 ![](ResourcesForREADME/tableanim.gif)
 
 
-###Picker Styles
+### Picker Styles
 
 WKInterfacePicker styles catalog.
 
 <img src="ResourcesForREADME/picker.png" width="136">
 
 
-###Taptic Engine
+### Taptic Engine
 
 Access to the Taptic engine using `playHaptic` method.
 
 <img src="ResourcesForREADME/taptic.png" width="136">
 
 
-###Audio Rec & Play
+### Audio Rec & Play
 
 Record and play audio.
 
 <img src="ResourcesForREADME/rec_play.png" width="275">
 
 
-###Animation with Digital Crown
+### Animation with Digital Crown
 
 Coordinated Animations with WKInterfacePicker and Digital Crown.
 
 ![](ResourcesForREADME/crownanim.gif)
 
 
-###Draw Paths (Updated by [hoppenichu](https://github.com/hoppenichu))
+### Draw Paths (Updated by [hoppenichu](https://github.com/hoppenichu))
 
 Draw paths with Core Graphics.
 
 <img src="ResourcesForREADME/bezier.png" width="136">
 
 
-###Gradations (Updated by [hoppenichu](https://github.com/hoppenichu))
+### Gradations (Updated by [hoppenichu](https://github.com/hoppenichu))
 
 Draw gradations with Core Graphics.
 
 <img src="ResourcesForREADME/gradation.png" width="136">
 
 
-###Heart Rate (Created by [kitasuke](https://github.com/kitasuke))
+### Heart Rate (Created by [kitasuke](https://github.com/kitasuke))
 
 Access to Heart Rate data using HealthKit.
 
 <img src="ResourcesForREADME/heartrate.png" width="136">
 
 
-###Accelerometer
+### Accelerometer
 
 Access to Accelerometer data using CoreMotion.
 
 <img src="ResourcesForREADME/acc.png" width="136">
 
-###Gyroscope (Not Available)
+### Gyroscope (Not Available)
 
 Access to Gyroscope data using CoreMotion. 
 
@@ -105,7 +105,7 @@ Access to Gyroscope data using CoreMotion.
 
 <img src="ResourcesForREADME/gyro.png" width="136">
 
-###Device Motion (Not Available)
+### Device Motion (Not Available)
 
 Access to DeviceMotion data using CoreMotion. 
 
@@ -113,27 +113,27 @@ Access to DeviceMotion data using CoreMotion.
 
 <img src="ResourcesForREADME/devmotion.png" width="136">
 
-###Pedometer
+### Pedometer
 
 Counting steps demo using CMPedometer.
 
 <img src="ResourcesForREADME/pedometer.png" width="136">
 
-###Alert
+### Alert
 
 Present an alert or action sheet.
 
 <img src="ResourcesForREADME/alert.png" width="414">
 
 
-###Interactive Messaging
+### Interactive Messaging
 
 Sending message to phone and receiving from phone demo with WatchConnectivity.
 
 <img src="ResourcesForREADME/interactive.png" width="136">
 
 
-###Audio File Player
+### Audio File Player
 
 Play an audio file with WKAudioFilePlayer.
 
@@ -141,21 +141,21 @@ Play an audio file with WKAudioFilePlayer.
 
 **Need to pair a Bluetooth headset on your Apple Watch.**
 
-###Open System URL
+### Open System URL
 
 Open Tel or SMS app using openSystemURL: method.
 
 <img src="ResourcesForREADME/open.png" width="136">
 
 
-###Network Access (Created by [KAMEDAkyosuke](https://github.com/KAMEDAkyosuke))
+### Network Access (Created by [KAMEDAkyosuke](https://github.com/KAMEDAkyosuke))
 
 Get an image data from network using NSURLSession.
 
 <img src="ResourcesForREADME/network.png" width="136">
 
 
-##Known Issues
+## Known Issues
 
 - Open System URL
   - Phone doesn't launch...
@@ -163,7 +163,7 @@ Get an image data from network using NSURLSession.
   - `sms:` works with same way. I have no idea why it doesn't work!
 
 
-##iOS-9-Sampler
+## iOS-9-Sampler
 
 You can check the **examples for iOS 9** new features on [iOS-9-Sampler](https://github.com/shu223/iOS-9-Sampler)!!
 
@@ -172,7 +172,7 @@ You can check the **examples for iOS 9** new features on [iOS-9-Sampler](https:/
 - https://github.com/shu223/iOS-9-Sampler
 
 
-##Author
+## Author
 
 **Shuichi Tsutsumi**
 
@@ -185,6 +185,6 @@ iOS freelancer in Japan. Welcome works from abroad!
 
 
 
-##Special Thanks
+## Special Thanks
 
 The icon is designed by [Okazu](https://www.facebook.com/pashimo).
