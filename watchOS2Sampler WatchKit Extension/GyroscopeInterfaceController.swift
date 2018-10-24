@@ -21,8 +21,8 @@ class GyroscopeInterfaceController: WKInterfaceController {
     let motionManager = CMMotionManager()
 
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         
         motionManager.gyroUpdateInterval = 0.1
     }
@@ -30,14 +30,14 @@ class GyroscopeInterfaceController: WKInterfaceController {
     override func willActivate() {
         super.willActivate()
 
-        let handler:CMGyroHandler = {(data: CMGyroData?, error: NSError?) -> Void in
+        let handler:CMGyroHandler = {(data: CMGyroData?, error: Error?) -> Void in
             self.labelX.setText(String(format: "%.2f", data!.rotationRate.x))
             self.labelY.setText(String(format: "%.2f", data!.rotationRate.y))
             self.labelZ.setText(String(format: "%.2f", data!.rotationRate.z))
         }
         
-        if motionManager.gyroAvailable {
-            motionManager.startGyroUpdatesToQueue(NSOperationQueue.currentQueue()!, withHandler: handler)
+        if motionManager.isGyroAvailable {
+            motionManager.startGyroUpdates(to: OperationQueue.current!, withHandler: handler)
         }
         else {
             labelX.setText("not available")

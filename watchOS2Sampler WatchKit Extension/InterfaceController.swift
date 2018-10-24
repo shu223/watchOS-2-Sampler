@@ -22,8 +22,8 @@ class InterfaceController: WKInterfaceController {
     var items: [Dictionary<String, String>]!
     
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
 
         items = [
             [
@@ -113,8 +113,8 @@ class InterfaceController: WKInterfaceController {
             ],
             [
                 kItemKeyTitle: "Network Access",
-                kItemKeyDetail: "Get an image data from network using NSURLSession.",
-                kItemKeyClassPrefix: "NSURLSession",
+                kItemKeyDetail: "Get an image data from network using URLSession.",
+                kItemKeyClassPrefix: "URLSession",
             ],
             [
                 kItemKeyTitle: "FPS Test",
@@ -145,8 +145,8 @@ class InterfaceController: WKInterfaceController {
 
         var i=0
         for anItem in items {
-            let row = table.rowControllerAtIndex(i) as! RowController
-            row.showItem(anItem[kItemKeyTitle]!, detail: anItem[kItemKeyDetail]!)
+            let row = table.rowController(at: i) as! RowController
+            row.showItem(title: anItem[kItemKeyTitle]!, detail: anItem[kItemKeyDetail]!)
             i += 1
         }
     }
@@ -154,13 +154,13 @@ class InterfaceController: WKInterfaceController {
     // =========================================================================
     // MARK: WKInterfaceTable
     
-    override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
+    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
         
         print("didSelectRowAtIndex: \(rowIndex)")
         
         let item = items[rowIndex]
         let title = item[kItemKeyClassPrefix]
         
-        pushControllerWithName(title!, context: nil)
+        pushController(withName: title!, context: nil)
     }
 }

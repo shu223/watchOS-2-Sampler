@@ -19,8 +19,8 @@ class PickerStylesInterfaceController: WKInterfaceController {
     var pickerItems: [WKPickerItem]! = []
 
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         
         for i in 1...10 {
             let pickerItem = WKPickerItem()

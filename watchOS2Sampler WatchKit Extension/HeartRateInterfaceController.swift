@@ -17,13 +17,13 @@ class HeartRateInterfaceController: WKInterfaceController {
     @IBOutlet weak var label: WKInterfaceLabel!
     @IBOutlet weak var startBtn: WKInterfaceButton!
     let healthStore = HKHealthStore()
-    let heartRateType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)!
-    let heartRateUnit = HKUnit(fromString: "count/min")
+    let heartRateType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
+    let heartRateUnit = HKUnit(from: "count/min")
     var heartRateQuery: HKQuery?
     
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
     }
 
     override func willActivate() {
@@ -36,7 +36,7 @@ class HeartRateInterfaceController: WKInterfaceController {
         
         let dataTypes = Set([heartRateType])
         
-        healthStore.requestAuthorizationToShareTypes(nil, readTypes: dataTypes) { (success, error) -> Void in
+        healthStore.requestAuthorization(toShare: nil, read: dataTypes) { (success, error) -> Void in
             guard success else {
                 self.label.setText("not allowed")
                 return
@@ -58,12 +58,12 @@ class HeartRateInterfaceController: WKInterfaceController {
         if heartRateQuery == nil {
             // start
             heartRateQuery = self.createStreamingQuery()
-            healthStore.executeQuery(self.heartRateQuery!)
+            healthStore.execute(self.heartRateQuery!)
             startBtn.setTitle("Stop")
         }
         else {
             // stop
-            healthStore.stopQuery(self.heartRateQuery!)
+            healthStore.stop(self.heartRateQuery!)
             heartRateQuery = nil
             startBtn.setTitle("Start")
         }
@@ -74,13 +74,13 @@ class HeartRateInterfaceController: WKInterfaceController {
     // MARK: - Private
     
     private func createStreamingQuery() -> HKQuery {
-        let predicate = HKQuery.predicateForSamplesWithStartDate(NSDate(), endDate: nil, options: .None)
+        let predicate = HKQuery.predicateForSamples(withStart: Date(), end: nil, options: [])
         
         let query = HKAnchoredObjectQuery(type: heartRateType, predicate: predicate, anchor: nil, limit: Int(HKObjectQueryNoLimit)) { (query, samples, deletedObjects, anchor, error) -> Void in
-            self.addSamples(samples)
+            self.addSamples(samples: samples)
         }
         query.updateHandler = { (query, samples, deletedObjects, anchor, error) -> Void in
-            self.addSamples(samples)
+            self.addSamples(samples: samples)
         }
         
         return query
@@ -89,6 +89,6 @@ class HeartRateInterfaceController: WKInterfaceController {
     private func addSamples(samples: [HKSample]?) {
         guard let samples = samples as? [HKQuantitySample] else { return }
         guard let quantity = samples.last?.quantity else { return }
-        label.setText("\(quantity.doubleValueForUnit(heartRateUnit))")
+        label.setText("\(quantity.doubleValue(for: heartRateUnit))")
     }
 }

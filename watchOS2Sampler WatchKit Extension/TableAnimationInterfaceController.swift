@@ -17,8 +17,8 @@ class TableAnimationInterfaceController: WKInterfaceController {
     var numberOfRows: Int = 3
 
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context) 
     }
 
     override func willActivate() {
@@ -35,8 +35,8 @@ class TableAnimationInterfaceController: WKInterfaceController {
     private func loadTableData() {
         
         for i in 0 ..< numberOfRows {
-            let row = table.rowControllerAtIndex(i) as! RowController
-            row.showItem("\(i)", detail: "")
+            let row = table.rowController(at: i) as! RowController
+            row.showItem(title: "\(i)", detail: "")
         }
     }
 
@@ -46,7 +46,7 @@ class TableAnimationInterfaceController: WKInterfaceController {
     
     @IBAction func insertBtnTapped() {
         
-        table.insertRowsAtIndexes(NSIndexSet(index: 0), withRowType: "Cell")
+        table.insertRows(at: IndexSet(arrayLiteral: 0), withRowType: "Cell")
         numberOfRows += 1
         loadTableData()
     }
@@ -57,7 +57,7 @@ class TableAnimationInterfaceController: WKInterfaceController {
             return
         }
         
-        table.removeRowsAtIndexes(NSIndexSet(index: 0))
+        table.removeRows(at: IndexSet(arrayLiteral: 0))
         numberOfRows -= 1
         loadTableData()
     }

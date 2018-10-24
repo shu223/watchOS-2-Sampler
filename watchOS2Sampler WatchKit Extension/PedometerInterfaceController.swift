@@ -21,32 +21,31 @@ class PedometerInterfaceController: WKInterfaceController {
     let pedometer = CMPedometer()
     
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
     }
 
     override func willActivate() {
         super.willActivate()
         
         if CMPedometer.isPaceAvailable() {
-            
-            pedometer.startPedometerUpdatesFromDate(NSDate()) { (pedometerData, error) -> Void in
+            pedometer.startUpdates(from: Date()) { (pedometerData, error) -> Void in
                 
                 if let pedometerData = pedometerData {
                     
-                    let steps = pedometerData.numberOfSteps.unsignedLongValue
+                    let steps = pedometerData.numberOfSteps.uintValue
                     self.labelSteps.setText(String(format: "%lu", steps))
                     
                     if let distance = pedometerData.distance {
-                        self.labelDistance.setText(String(format: "%lu", distance.unsignedLongValue))
+                        self.labelDistance.setText(String(format: "%lu", distance.uintValue))
                     }
                     
                     if let floorsAscended = pedometerData.floorsAscended {
-                        self.labelAscended.setText(String(format: "%lu", floorsAscended.unsignedLongValue))
+                        self.labelAscended.setText(String(format: "%lu", floorsAscended.uintValue))
                     }
                     
                     if let floorsDescended = pedometerData.floorsDescended {
-                        self.labelDescended.setText(String(format: "%lu", floorsDescended.unsignedLongValue))
+                        self.labelDescended.setText(String(format: "%lu", floorsDescended.uintValue))
                     }
                 }
             }
@@ -63,7 +62,7 @@ class PedometerInterfaceController: WKInterfaceController {
     override func didDeactivate() {
         super.didDeactivate()
         
-        pedometer.stopPedometerUpdates()
+        pedometer.stopUpdates()
     }
 
 }

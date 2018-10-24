@@ -12,14 +12,14 @@ import WatchConnectivity
 
 class MessageToPhoneInterfaceController: WKInterfaceController, WCSessionDelegate {
 
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         
         // Activate the session on both sides to enable communication.
         if WCSession.isSupported() {
-            let session = WCSession.defaultSession()
+            let session = WCSession.default
             session.delegate = self // conforms to WCSessionDelegate
-            session.activateSession()
+            session.activate()
         }
     }
 
@@ -35,27 +35,28 @@ class MessageToPhoneInterfaceController: WKInterfaceController, WCSessionDelegat
     // =========================================================================
     // MARK: - WCSessionDelegate
     
-    func sessionWatchStateDidChange(session: WCSession) {
+    @available(watchOSApplicationExtension 2.2, *)
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         print(#function)
         print(session)
-        print("reachable:\(session.reachable)")
+        print("reachable:\(session.isReachable)")
     }
 
     // Received message from iPhone
-    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         print(#function)
         guard message["request"] as? String == "showAlert" else {return}
 
         let defaultAction = WKAlertAction(
             title: "OK",
-            style: WKAlertActionStyle.Default) { () -> Void in
+            style: WKAlertActionStyle.default) { () -> Void in
         }
         let actions = [defaultAction]
             
-        presentAlertControllerWithTitle(
-            "Message Received",
+        presentAlert(
+            withTitle: "Message Received",
             message: "",
-            preferredStyle: WKAlertControllerStyle.Alert,
+            preferredStyle: WKAlertControllerStyle.alert,
             actions: actions)
     }
     
@@ -65,7 +66,7 @@ class MessageToPhoneInterfaceController: WKInterfaceController, WCSessionDelegat
     
     @IBAction func sendBtnTapped() {
         let message = ["request": "fireLocalNotification"]
-        WCSession.defaultSession().sendMessage(
+        WCSession.default.sendMessage(
             message, replyHandler: { (replyMessage) -> Void in
                 //
             }) { (error) -> Void in

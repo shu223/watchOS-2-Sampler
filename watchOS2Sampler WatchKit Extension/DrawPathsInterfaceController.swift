@@ -16,8 +16,8 @@ class DrawPathsInterfaceController: WKInterfaceController {
     @IBOutlet weak var image: WKInterfaceImage!
     
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
     }
 
     override func willActivate() {
@@ -34,25 +34,25 @@ class DrawPathsInterfaceController: WKInterfaceController {
     @IBAction func strokeBtnTapped() {
         
         // Create a graphics context
-        let size = CGSizeMake(100, 100)
+        let size = CGSize(width: 100, height: 100)
         UIGraphicsBeginImageContext(size)
-        let context = UIGraphicsGetCurrentContext()
+        let context = UIGraphicsGetCurrentContext()!
         
         // Setup for the path appearance
-        CGContextSetStrokeColorWithColor(context, UIColor.whiteColor().CGColor)
-        CGContextSetLineWidth(context, 4.0)
+        context.setStrokeColor(UIColor.white.cgColor)
+        context.setLineWidth(4.0)
 
         // Draw lines
-        CGContextBeginPath (context);
-        CGContextMoveToPoint(context, 0, 0);
-        CGContextAddLineToPoint(context, 100, 100);
-        CGContextMoveToPoint(context, 0, 100);
-        CGContextAddLineToPoint(context, 100, 0);
-        CGContextStrokePath(context);
+        context.beginPath()
+        context.move(to: CGPoint(x: 0, y: 0))
+        context.addLine(to: CGPoint(x: 100, y: 100))
+        context.move(to: CGPoint(x: 0, y: 100))
+        context.addLine(to: CGPoint(x: 100, y: 0))
+        context.strokePath()
         
         // Convert to UIImage
-        let cgimage = CGBitmapContextCreateImage(context);
-        let uiimage = UIImage(CGImage: cgimage!)
+        let cgimage = context.makeImage()
+        let uiimage = UIImage(cgImage: cgimage!)
 
         // End the graphics context
         UIGraphicsEndImageContext()
@@ -63,24 +63,24 @@ class DrawPathsInterfaceController: WKInterfaceController {
     @IBAction func bezierBtnTapped() {
 
         // Create a graphics context
-        let size = CGSizeMake(100, 100)
+        let size = CGSize(width: 100, height: 100)
         UIGraphicsBeginImageContext(size)
-        let context = UIGraphicsGetCurrentContext()
+        let context = UIGraphicsGetCurrentContext()!
         
         // Setup for the path appearance
-        UIColor.greenColor().setStroke()
-        UIColor.whiteColor().setFill()
+        UIColor.green.setStroke()
+        UIColor.white.setFill()
         
         // Draw an oval
-        let rect = CGRectMake(2, 2, 96, 96)
-        let path = UIBezierPath(ovalInRect: rect)
+        let rect = CGRect(x: 2, y: 2, width: 96, height: 96)
+        let path = UIBezierPath(ovalIn: rect)
         path.lineWidth = 4.0
         path.fill()
         path.stroke()
         
         // Convert to UIImage
-        let cgimage = CGBitmapContextCreateImage(context);
-        let uiimage = UIImage(CGImage: cgimage!)
+        let cgimage = context.makeImage()
+        let uiimage = UIImage(cgImage: cgimage!)
         
         // End the graphics context
         UIGraphicsEndImageContext()
@@ -91,22 +91,22 @@ class DrawPathsInterfaceController: WKInterfaceController {
     @IBAction func svgBtnTapped() {
 
         // Create a graphics context
-        let size = CGSizeMake(512, 512)
+        let size = CGSize(width: 512, height: 512)
         UIGraphicsBeginImageContext(size)
-        let context = UIGraphicsGetCurrentContext()
+        let context = UIGraphicsGetCurrentContext()!
         
         // Setup for the path appearance
-        UIColor.yellowColor().setFill()
+        UIColor.yellow.setFill()
 
         // Convert SVG -> CGPath -> UIBezierPath
-        let pocketSvg = PocketSVG(fromSVGFileNamed: "sample")
-        let path = pocketSvg.bezier
+        let pocketSvg = PocketSVG(fromSVGFileNamed: "sample")!
+        let path = pocketSvg.bezier!
         print(path)
         path.fill()
         
         // Convert to UIImage
-        let cgimage = CGBitmapContextCreateImage(context);
-        let uiimage = UIImage(CGImage: cgimage!)
+        let cgimage = context.makeImage()
+        let uiimage = UIImage(cgImage: cgimage!)
         
         // End the graphics context
         UIGraphicsEndImageContext()

@@ -13,8 +13,8 @@ import Foundation
 class AlertInterfaceController: WKInterfaceController {
 
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
     }
 
     override func willActivate() {
@@ -30,21 +30,21 @@ class AlertInterfaceController: WKInterfaceController {
         
         let defaultAction = WKAlertAction(
             title: "Default",
-            style: WKAlertActionStyle.Default) { () -> Void in
+            style: WKAlertActionStyle.default) { () -> Void in
                 
                 print("Default")
         }
         
         let cancelAction = WKAlertAction(
             title: "Cancel",
-            style: WKAlertActionStyle.Cancel) { () -> Void in
+            style: WKAlertActionStyle.cancel) { () -> Void in
                 
                 print("Cancel")
         }
         
         let destructiveAction = WKAlertAction(
             title: "Destructive",
-            style: WKAlertActionStyle.Destructive) { () -> Void in
+            style: WKAlertActionStyle.destructive) { () -> Void in
                 
                 print("Destructive")
         }
@@ -52,12 +52,12 @@ class AlertInterfaceController: WKInterfaceController {
         var actions = [defaultAction, destructiveAction]
         
         // exactly two actions are needed for WKAlertControllerStyleSideBySideButtonsAlert
-        if style != WKAlertControllerStyle.SideBySideButtonsAlert {
+        if style != WKAlertControllerStyle.sideBySideButtonsAlert {
             actions.append(cancelAction)
         }
         
-        presentAlertControllerWithTitle(
-            "SomeTitle",
+        presentAlert(
+            withTitle: "SomeTitle",
             message: "SomeMessage",
             preferredStyle: style,
             actions: actions)
@@ -69,16 +69,16 @@ class AlertInterfaceController: WKInterfaceController {
     
     @IBAction func alertBtnTapped() {
 
-        showAlertControllerWithStyle(WKAlertControllerStyle.Alert)
+        showAlertControllerWithStyle(style: WKAlertControllerStyle.alert)
     }
 
     @IBAction func sidebysideBtnTapped() {
         
-        showAlertControllerWithStyle(WKAlertControllerStyle.SideBySideButtonsAlert)
+        showAlertControllerWithStyle(style: WKAlertControllerStyle.sideBySideButtonsAlert)
     }
 
     @IBAction func actionSheetBtnTapped() {
         
-        showAlertControllerWithStyle(WKAlertControllerStyle.ActionSheet)
+        showAlertControllerWithStyle(style: WKAlertControllerStyle.actionSheet)
     }
 }

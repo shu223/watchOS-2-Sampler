@@ -27,28 +27,27 @@ class ViewController: UIViewController {
     @IBAction func sendToWatchBtnTapped(sender: UIButton!) {
         
         // check the reachablity
-        if !WCSession.defaultSession().reachable {
+        if !WCSession.default.isReachable {
             
             let alert = UIAlertController(
                 title: "Failed to send",
                 message: "Apple Watch is not reachable.",
-                preferredStyle: UIAlertControllerStyle.Alert)
+                preferredStyle: .alert)
             let okAction = UIAlertAction(
                 title: "OK",
-                style: UIAlertActionStyle.Cancel,
+                style: .cancel,
                 handler: nil)
             alert.addAction(okAction)
-            presentViewController(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
             
             return
         }
 
         let message = ["request": "showAlert"]
-        WCSession.defaultSession().sendMessage(
-            message, replyHandler: { (replyMessage) -> Void in
-                //
-            }) { (error) -> Void in
-                print(error)
+        WCSession.default.sendMessage(message, replyHandler: { (replyMessage) in
+            //
+        }) { (error) in
+            print(error)
         }
     }
 }

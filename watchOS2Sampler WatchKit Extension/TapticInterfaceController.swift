@@ -19,20 +19,20 @@ class TapticInterfaceController: WKInterfaceController {
     var currentItem: WKPickerItem!
     
     var hapticTypes = [
-        "Notification": WKHapticType.Notification,
-        "DirectionUp": WKHapticType.DirectionUp,
-        "DirectionDown": WKHapticType.DirectionDown,
-        "Success": WKHapticType.Success,
-        "Failure": WKHapticType.Failure,
-        "Retry": WKHapticType.Retry,
-        "Start": WKHapticType.Start,
-        "Stop": WKHapticType.Stop,
-        "Click": WKHapticType.Click,
+        "Notification": WKHapticType.notification,
+        "DirectionUp": WKHapticType.directionUp,
+        "DirectionDown": WKHapticType.directionDown,
+        "Success": WKHapticType.success,
+        "Failure": WKHapticType.failure,
+        "Retry": WKHapticType.retry,
+        "Start": WKHapticType.start,
+        "Stop": WKHapticType.stop,
+        "Click": WKHapticType.click,
     ]
     
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
 
         pickerItems = []
         for typeStr in hapticTypes.keys {
@@ -65,6 +65,6 @@ class TapticInterfaceController: WKInterfaceController {
     @IBAction func hapticBtnTapped() {
         
         let hapticType = hapticTypes[currentItem.title!]
-        WKInterfaceDevice.currentDevice().playHaptic(hapticType!)
+        WKInterfaceDevice.current().play(hapticType!)
     }
 }

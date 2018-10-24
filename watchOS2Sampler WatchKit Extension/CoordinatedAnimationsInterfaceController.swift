@@ -17,8 +17,8 @@ class CoordinatedAnimationsInterfaceController: WKInterfaceController {
     @IBOutlet weak var picker: WKInterfacePicker!
     
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
 
         // create animated images and picker items
         var images: [UIImage]! = []
@@ -31,7 +31,7 @@ class CoordinatedAnimationsInterfaceController: WKInterfaceController {
             pickerItem.title = "\(i)"
             pickerItems.append(pickerItem)
         }
-        let progressImages = UIImage.animatedImageWithImages(images, duration: 0.0)
+        let progressImages = UIImage.animatedImage(with: images, duration: 0.0)
         progressGroup.setBackgroundImage(progressImages)
         picker.setCoordinatedAnimations([progressGroup])
         

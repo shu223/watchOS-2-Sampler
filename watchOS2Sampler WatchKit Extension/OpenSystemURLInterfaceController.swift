@@ -12,8 +12,8 @@ import Foundation
 
 class OpenSystemURLInterfaceController: WKInterfaceController {
 
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
     }
 
     override func willActivate() {
@@ -29,12 +29,12 @@ class OpenSystemURLInterfaceController: WKInterfaceController {
     // MARK: - Actions
     
     @IBAction func phoneBtnTapped() {
-        let url = NSURL(string: "tel:")!
-        WKExtension.sharedExtension().openSystemURL(url)
+        let url = URL(string: "tel:")!
+        WKExtension.shared().openSystemURL(url)
     }
 
     @IBAction func smsBtnTapped() {
-        let url = NSURL(string: "sms:")!
-        WKExtension.sharedExtension().openSystemURL(url)
+        let url = URL(string: "sms:")!
+        WKExtension.shared().openSystemURL(url)
     }
 }

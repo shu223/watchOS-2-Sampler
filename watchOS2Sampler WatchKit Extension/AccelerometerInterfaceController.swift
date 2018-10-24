@@ -21,8 +21,8 @@ class AccelerometerInterfaceController: WKInterfaceController {
     let motionManager = CMMotionManager()
     
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         
         motionManager.accelerometerUpdateInterval = 0.1
     }
@@ -30,13 +30,13 @@ class AccelerometerInterfaceController: WKInterfaceController {
     override func willActivate() {
         super.willActivate()
 
-        if motionManager.accelerometerAvailable {
-            let handler:CMAccelerometerHandler = {(data: CMAccelerometerData?, error: NSError?) -> Void in
+        if motionManager.isAccelerometerAvailable {
+            let handler:CMAccelerometerHandler = {(data: CMAccelerometerData?, error: Error?) -> Void in
                 self.labelX.setText(String(format: "%.2f", data!.acceleration.x))
                 self.labelY.setText(String(format: "%.2f", data!.acceleration.y))
                 self.labelZ.setText(String(format: "%.2f", data!.acceleration.z))
             }
-            motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue.currentQueue()!, withHandler: handler)
+            motionManager.startAccelerometerUpdates(to: OperationQueue.current!, withHandler: handler)
         }
         else {
             labelX.setText("not available")

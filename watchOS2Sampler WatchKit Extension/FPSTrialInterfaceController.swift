@@ -16,8 +16,8 @@ class FPSTrialInterfaceController: WKInterfaceController {
     @IBOutlet weak var image: WKInterfaceImage!
     
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         print("awakeWithContext")
     }
 
@@ -47,8 +47,8 @@ class FPSTrialInterfaceController: WKInterfaceController {
             images.append(image!)
         }
 
-        let animatedImage = UIImage.animatedImageWithImages(
-            images,
+        let animatedImage = UIImage.animatedImage(
+            with: images,
             duration: 1.0)
         
         image.setImage(animatedImage)
@@ -60,14 +60,14 @@ class FPSTrialInterfaceController: WKInterfaceController {
     // MARK: - Actions
     
     @IBAction func btn1Tapped() {
-        startAnimating(36)
+        startAnimating(fps: 36)
     }
 
     @IBAction func btn2Tapped() {
-        startAnimating(24)
+        startAnimating(fps: 24)
     }
 
     @IBAction func btn3Tapped() {
-        startAnimating(12)
+        startAnimating(fps: 12)
     }
 }

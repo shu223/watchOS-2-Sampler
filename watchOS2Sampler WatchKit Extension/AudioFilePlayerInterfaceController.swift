@@ -19,12 +19,12 @@ class AudioFilePlayerInterfaceController: WKInterfaceController {
     var player: WKAudioFilePlayer!
     
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         
-        let filePath = NSBundle.mainBundle().pathForResource("se_tap", ofType: "m4a")!
-        let fileUrl = NSURL.fileURLWithPath(filePath)
-        let asset = WKAudioFileAsset(URL: fileUrl)
+        let filePath = Bundle.main.path(forResource: "se_tap", ofType: "m4a")!
+        let fileUrl = URL(fileURLWithPath: filePath)
+        let asset = WKAudioFileAsset(url: fileUrl)
         let playerItem = WKAudioFilePlayerItem(asset: asset)
         player = WKAudioFilePlayer(playerItem: playerItem)
     }
@@ -44,12 +44,12 @@ class AudioFilePlayerInterfaceController: WKInterfaceController {
     @IBAction func playBtnTapped() {
         
         switch player.status {
-        case .ReadyToPlay:
+        case .readyToPlay:
             label.setText("playing")
             player.play()
-        case .Failed:
+        case .failed:
             label.setText("failed")
-        case .Unknown:
+        case .unknown:
             label.setText("unknown")
         }
     }

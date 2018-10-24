@@ -17,8 +17,8 @@ class AudioRecAndPlayInterfaceController: WKInterfaceController {
     @IBOutlet weak var playLabel: WKInterfaceLabel!
     
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
     }
 
     override func willActivate() {
@@ -33,13 +33,13 @@ class AudioRecAndPlayInterfaceController: WKInterfaceController {
     // =========================================================================
     // MARK: - Private
 
-    func recFileURL() -> NSURL? {
+    func recFileURL() -> URL? {
         
         // Must use a shared container
-        let fileManager = NSFileManager.defaultManager()
-        let container = fileManager.containerURLForSecurityApplicationGroupIdentifier("group.com.shu223.watchos2sampler") // replace with your own identifier!!!!
+        let fileManager = FileManager.default
+        let container = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.com.shu223.watchos2sampler") // replace with your own identifier!!!!
         if let container = container {
-            return container.URLByAppendingPathComponent("rec.mp4")
+            return container.appendingPathComponent("rec.mp4")
         }
         else {
             return nil
@@ -54,14 +54,14 @@ class AudioRecAndPlayInterfaceController: WKInterfaceController {
 
         if let recFileUrl = recFileURL() {
             
-            presentAudioRecorderControllerWithOutputURL(
-                recFileUrl,
-                preset: WKAudioRecorderPreset.HighQualityAudio,
+            presentAudioRecorderController(
+                withOutputURL: recFileUrl,
+                preset: WKAudioRecorderPreset.highQualityAudio,
                 options: nil,
                 completion:
                 { (didSave, error) -> Void in
-                    print("error:\(error)\n")
-                    self.recLabel.setText("didSave:\(didSave), error:\(error)")
+                    print("error:\(String(describing: error))\n")
+                    self.recLabel.setText("didSave:\(didSave), error:\(String(describing: error))")
             })
         }
     }
@@ -70,11 +70,11 @@ class AudioRecAndPlayInterfaceController: WKInterfaceController {
         
         if let recFileUrl = recFileURL() {
             
-            presentMediaPlayerControllerWithURL(
-                recFileUrl,
+            presentMediaPlayerController(
+                with: recFileUrl,
                 options: nil) { (didPlayToEnd, endTime, error) -> Void in
                     
-                    self.playLabel.setText("didPlayToEnd:\(didPlayToEnd), endTime:\(endTime), error:\(error)")
+                    self.playLabel.setText("didPlayToEnd:\(didPlayToEnd), endTime:\(endTime), error:\(String(describing: error))")
             }
         }
     }
