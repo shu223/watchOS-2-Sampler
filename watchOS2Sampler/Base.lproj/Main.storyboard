@@ -1,50 +1,53 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="AvenirNext.ttc">
+        <array key="AvenirNext.ttc">
             <string>AvenirNext-Regular</string>
-        </mutableArray>
+        </array>
     </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="watchOS2Sampler" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2S5-X8-1wY">
-                                <rect key="frame" x="216.5" y="285" width="166" height="30"/>
+                                <rect key="frame" x="104.66666666666669" y="391" width="166" height="30"/>
                                 <state key="normal" title="Send Message to Watch"/>
                                 <connections>
                                     <action selector="sendToWatchBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nhx-u7-1zs"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[note] Most of examples are inclueded in watch-app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOG-4K-7qi">
-                                <rect key="frame" x="60" y="28" width="480" height="23.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[note] Most of examples are inclueded in watch app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOG-4K-7qi">
+                                <rect key="frame" x="77.666666666666686" y="52" width="220" height="46.666666666666657"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="WOG-4K-7qi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="7dq-qZ-NDE"/>
+                            <constraint firstItem="WOG-4K-7qi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="7dq-qZ-NDE"/>
                             <constraint firstItem="2S5-X8-1wY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8zn-aA-DSp"/>
-                            <constraint firstItem="WOG-4K-7qi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="AyJ-XC-08x"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WOG-4K-7qi" secondAttribute="trailing" constant="40" id="gdO-Uf-BqC"/>
-                            <constraint firstItem="WOG-4K-7qi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mKp-Rw-WA9"/>
-                            <constraint firstItem="2S5-X8-1wY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zfb-hr-Z5A"/>
+                            <constraint firstItem="WOG-4K-7qi" firstAttribute="top" secondItem="o6E-5f-tIn" secondAttribute="top" constant="8" id="GCH-dg-Qnw"/>
+                            <constraint firstItem="WOG-4K-7qi" firstAttribute="centerX" secondItem="o6E-5f-tIn" secondAttribute="centerX" id="eSR-gC-Frd"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="WOG-4K-7qi" secondAttribute="trailing" constant="40" id="gdO-Uf-BqC"/>
+                            <constraint firstItem="WOG-4K-7qi" firstAttribute="centerX" secondItem="o6E-5f-tIn" secondAttribute="centerX" id="mKp-Rw-WA9"/>
+                            <constraint firstItem="2S5-X8-1wY" firstAttribute="centerX" secondItem="o6E-5f-tIn" secondAttribute="centerX" id="zfb-hr-Z5A"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="o6E-5f-tIn"/>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="mKp-Rw-WA9"/>
