@@ -26,6 +26,8 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>NSHealthShareUsageDescription must be set in the app&apos;s Info.plist in order to request read authorization for the following types: HKQuantityTypeIdentifierHeartRate</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
