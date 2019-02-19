@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     // =========================================================================
     // MARK: - Actions
     
-    @IBAction func sendToWatchBtnTapped(sender: UIButton!) {
+    @IBAction func sendToWatchBtnTapped(_ sender: UIButton!) {
         
         // check the reachablity
         if !WCSession.default.isReachable {
