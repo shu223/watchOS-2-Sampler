@@ -51,6 +51,8 @@ class AudioFilePlayerInterfaceController: WKInterfaceController {
             label.setText("failed")
         case .unknown:
             label.setText("unknown")
+        @unknown default:
+            fatalError()
         }
     }
 }
