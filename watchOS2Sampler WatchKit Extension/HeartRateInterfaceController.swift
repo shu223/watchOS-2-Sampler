@@ -12,23 +12,18 @@ import HealthKit
 
 
 class HeartRateInterfaceController: WKInterfaceController {
-
     
     @IBOutlet weak var label: WKInterfaceLabel!
     @IBOutlet weak var startBtn: WKInterfaceButton!
+    
     let healthStore = HKHealthStore()
     let heartRateType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
     let heartRateUnit = HKUnit(from: "count/min")
     var heartRateQuery: HKQuery?
     
-    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-    }
 
-    override func willActivate() {
-        super.willActivate()
-        
         guard HKHealthStore.isHealthDataAvailable() else {
             label.setText("not available")
             return
@@ -43,34 +38,24 @@ class HeartRateInterfaceController: WKInterfaceController {
             }
         }
     }
-
-    override func didDeactivate() {
-        super.didDeactivate()
-    }
-
     
-    // =========================================================================
     // MARK: - Actions
     
     @IBAction func fetchBtnTapped() {
-        guard heartRateQuery == nil else { return }
-
-        if heartRateQuery == nil {
-            // start
-            heartRateQuery = self.createStreamingQuery()
-            healthStore.execute(self.heartRateQuery!)
-            startBtn.setTitle("Stop")
-        }
-        else {
+        if let query = heartRateQuery {
             // stop
-            healthStore.stop(self.heartRateQuery!)
+            healthStore.stop(query)
             heartRateQuery = nil
             startBtn.setTitle("Start")
+        } else {
+            // start
+            let query = createStreamingQuery()
+            healthStore.execute(query)
+            heartRateQuery = query
+            startBtn.setTitle("Stop")
         }
     }
-    
-    
-    // =========================================================================
+        
     // MARK: - Private
     
     private func createStreamingQuery() -> HKQuery {
@@ -79,6 +64,7 @@ class HeartRateInterfaceController: WKInterfaceController {
         let query = HKAnchoredObjectQuery(type: heartRateType, predicate: predicate, anchor: nil, limit: Int(HKObjectQueryNoLimit)) { (query, samples, deletedObjects, anchor, error) -> Void in
             self.addSamples(samples: samples)
         }
+        
         query.updateHandler = { (query, samples, deletedObjects, anchor, error) -> Void in
             self.addSamples(samples: samples)
         }
