@@ -276,7 +276,7 @@
                     <items>
                         <picker width="1" height="100" alignment="left" id="dpE-QA-ILQ">
                             <connections>
-                                <action selector="pickerItemSelected:" destination="gay-pf-gd0" id="OZb-27-8IC"/>
+                                <action selector="pickerItemSelectedWithIndex:" destination="gay-pf-gd0" id="fTA-fL-puS"/>
                             </connections>
                         </picker>
                         <button width="1" alignment="left" title="PLAY" id="x2h-cz-D0i">
